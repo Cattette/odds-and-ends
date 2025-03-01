@@ -11,6 +11,56 @@ oe_greece_missions_1 = {
 	}
 	has_country_shield = yes
 	
+	oe_greece_unification = {
+		icon = mission_invade_island
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = morea_area
+				area = northern_greece_area
+				area = macedonia_area
+				area = aegean_archipelago_area
+				area = albania_area
+				area = thrace_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		
+		trigger = {
+			is_free_or_tributary_trigger = yes
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			give_claims = { area = aydin_area }
+			give_claims = { area = hudavendigar_area }
+
+			custom_tooltip = super_cool_tt
+		}
+	}
+
 }
 oe_greece_missions_2 = {
 	slot = 2
