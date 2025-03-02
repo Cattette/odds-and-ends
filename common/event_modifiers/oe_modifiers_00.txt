@@ -1,0 +1,4 @@
+oe_greece_finest_navy_ever = {
+	naval_morale = 0.10
+	naval_maintenance_modifier = -0.15
+}
