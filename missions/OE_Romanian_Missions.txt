@@ -59,4 +59,21 @@ romanian_missions_1 = {
 			}
 		}
 	}
+
+	OE_Romania_Uniting_The_Counties = {
+        icon = mission_unite_home_region
+        required_missions = {OE_Romania_Strong_Ally}
+        position = 2
+        trigger = {
+            army_size_percentage = 0.9
+        }
+        effect = {
+            wallachia_area = {
+                add_permanent_claim = ROOT
+            }
+            moldavia_area = {
+                add_permanent_claim = ROOT
+            }
+        }
+    }
 }
