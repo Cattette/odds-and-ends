@@ -1,0 +1,8 @@
+oe_greece_finest_navy_ever = {
+	naval_morale = 0.10
+	naval_maintenance_modifier = -0.15
+}
+OE_Romania_Strong_Ally_Found = {
+	diplomatic_reputation = 1
+	improve_relation_modifier = 0.2
+}
