@@ -1,0 +1,26 @@
+﻿l_english:
+ # missions
+ yes:0 "£yes£"
+ no:0 "£no£"
+ cnubia_hidden_1_title:0 "[Root.GetSelectableMissionTitle]"
+ cnubia_hidden_1_desc:0 "[Root.GetSelectableMissionDescription]"
+ leader_of_nubian_copts_title:0 "The Kingdom of Nubia"
+ leader_of_nubian_copts_desc:0 "§TThis is a timed mission shared between other countries. If another nation completes this mission we will be unable to complete this tree.§!\n\n[Root.GetWhichNubia]"
+ leader_of_nubian_copts_trigger:0 "No other country has established itself as the dominant Christian kingdom in Nubia"
+ leader_of_nubian_copts_desc_north:0 "The Kingdom of Makuria used to stretch across the most fertile lands of Kush. All along the Nile from Upper Egypt to Soba they knew our law. However, centuries of decline have taken their toll. Islamic invasions have severed our ties to Christendom beyond the Nile, and even our former capital, Dongola, has fallen under their yoke.\n\nIf we are to prevail we must establish ourselves as the primary Nubian kingdom behind which the remaining faithful can rally."
+ leader_of_nubian_copts_desc_south:0 "Due to our placement in the uppermost reaches of Nubia, our kingdom was forged as a bullwark against Nomadic incursions. The weakness of our northern brothers have left us isolated and surrounded by greater and greater amounts of nomads now united behind a common prophet.\n\nIf we are to stand a chance against them we must establish ourselves as the primary Nubian kingdom behind which the remaining faithful must rally."
+ nubian_allies_title:0 "Nubian Allies"
+ nubian_allies_desc:0 "Across the city of Dongola lies our brethren. It would be prudent to dispatch our diplomats to establish a mission to their court and make our primacy known."
+ nubian_allies_friend:0 " If we completed this mission by improving relations:"
+ nubian_allies_enemy:0 "If we completed this mission by declaring a rivalry:"
+
+ # events
+ cNubia_events.1.t:0 "First among the Kings"
+ cNubia_events.1.d:0 "Our lands have seldom been united. Unlike our downstreams neighbors who have been united as far back as records can be read, our unity is limited to that of the tongue and faith rather than the militarily or administratively. Our lands are split between various smaller kingdoms and dependencies, often in peace and conflict with each other. While this communal existence served us well in the idylic past, current trends have made it untenable. Around us, across us, between us; our communities have been carved away and swallowed by invading interests. Even the proud kings of Egypt has long since faltered, their temples plundered, graves destroyed. Before our days are counted all of Nubia must united under [Root.Monarch.GetTitle] [Root.Monarch.GetName]."
+ cNubia_events.1.a:0 "Save thy people"
+ cNubia_events.1.a.tt:0 "§gWe will declare ourself as the prime king of the Christians of Nubia for whatever it's worth.§!"
+
+ # other
+ nubia_crusader:0 "King of Nubia"
+ desc_nubia_crusader:0 "REPLACE_ME"
+ sudan_region:0 "Sudan"
