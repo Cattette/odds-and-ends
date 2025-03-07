@@ -16,8 +16,7 @@ merc_polish_hussars = {
 	}
 
 	modifier = {
-		cavalry_power = 0.15
-		discipline = 0.05
+		morale_damage = .15
 	}
 
 }
