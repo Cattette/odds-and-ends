@@ -18,10 +18,10 @@
 - Dongola as Coptic center instead of Qasr Ibrim
 
 ## New tags
-- Alabwab, ALW
+1. Alabwab, ALW
 * Controls Shendy (2797)
 * Vassal or ally of Alodia
-- Shilluk, SHI
+2. Shilluk, SHI
 * Controls Sennar (2799) and Fazughli (1217)
 * Fetishists
 * Own culture in the Sudanese group
