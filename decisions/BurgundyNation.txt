@@ -1,0 +1,141 @@
+country_decisions = {
+
+	burgundian_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			was_never_german_regional_tag_trigger = yes
+			NOT = { has_country_flag = formed_burgundy_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			NOT = { exists = BUR }
+			primary_culture = burgundian
+		}
+		provinces_to_highlight = {
+			OR = {
+				AND = {
+					OR = {
+						area = west_burgundy_area
+						area = bourgogne_area
+					}
+					OR = {
+						NOT = { owned_by = root }
+						NOT = { is_core = root }
+					}
+				}
+				AND = {
+					ROOT = { NOT = { tag = NEV } }
+					NEV = {
+						OR = {
+							num_of_cities = 5
+							NOT = { is_subject_of = ROOT }
+						}
+					}
+					owned_by = NEV
+				}
+				AND = {
+					ROOT = { NOT = { tag = BAR } }
+					BAR = {
+						OR = {
+							num_of_cities = 5
+							NOT = { is_subject_of = ROOT }
+						}
+					}
+					owned_by = BAR
+				}
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_at_war = no
+			
+			west_burgundy_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+			bourgogne_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = root
+			}
+		}
+		effect = {
+			change_tag = BUR
+			restore_country_name_effect = yes
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 25
+			
+			swap_non_generic_missions = yes
+			on_change_tag_effect = yes
+
+			if = {
+				limit = {
+					NEV = { is_subject_of = ROOT }
+				}
+				inherit = NEV
+			}
+			if = {
+				limit = {
+					BAR = { is_subject_of = ROOT
+					}
+				}
+				inherit = BAR
+			}
+
+			if = { #need to have some reason for doing it
+				limit = {
+					any_owned_province = {
+						OR = {
+							area = west_burgundy_area
+							area = bourgogne_area
+						}
+						OR = {
+							nationalism = 1
+							local_autonomy = 26
+						}
+					}
+				}
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = west_burgundy_area
+							area = bourgogne_area
+						}
+						OR = {
+							nationalism = 1
+							local_autonomy = 26
+						}
+					}
+					add_nationalism = -10
+					add_local_autonomy = -15
+				}
+			}
+			else = {
+				capital_scope = { add_base_tax = 2 }
+			}
+			set_country_flag = formed_burgundy_flag
+			
+			if = {
+				limit = {
+					has_custom_ideas = no
+					NOT = { has_idea_group = BUR_Ideas }
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+}

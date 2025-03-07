@@ -56,8 +56,6 @@ oe_greece_missions_1 = {
 		effect = {
 			give_claims = { area = aydin_area }
 			give_claims = { area = hudavendigar_area }
-
-			custom_tooltip = super_cool_tt
 		}
 	}
 
@@ -75,6 +73,26 @@ oe_greece_missions_2 = {
 	}
 	has_country_shield = yes
 	
+	oe_greece_navy_build = {
+		icon = mission_invade_island
+		position = 1
+		provinces_to_highlight = {
+			has_port = yes
+			owned_by = ROOT
+		}
+
+		trigger = {
+			navy_size_percentage = 0.95
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = greece_finest_navy_ever
+				duration = 3650
+			}
+		}
+	}
+
 }
 oe_greece_missions_3 = {
 	slot = 3
