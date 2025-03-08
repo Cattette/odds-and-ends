@@ -6,3 +6,11 @@ OE_Romania_Strong_Ally_Found = {
 	diplomatic_reputation = 1
 	improve_relation_modifier = 0.2
 }
+adu_convert_heathens = {
+	global_heathen_missionary_strength = 0.02
+	missionary_maintenance_cost = -0.10
+}
+adu_accept_heathens = {
+	dhimmi_loyalty_modifier = 0.10
+	tolerance_heathen = 1.5
+}

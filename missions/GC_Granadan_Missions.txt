@@ -7,12 +7,6 @@ granada_development_missions = {
 	}
 	potential = {
 		always = no
-        has_dlc = "Golden Century"
-		OR = {
-			tag = GRA
-			tag = ADU
-		}
-		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	
@@ -88,9 +82,6 @@ andalusia_slot_1_missions = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -196,12 +187,6 @@ granada_slot_2_missions = {
 	}
 	potential = {
         always = no
-		OR = {
-			tag = GRA
-			tag = ADU
-		}
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -547,9 +532,6 @@ adu_slot_2_missions = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -838,12 +820,6 @@ granada_slot_3_missions = {
 	}
 	potential = {
         always = no
-		OR = {
-			tag = GRA
-			tag = ADU
-		}
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -984,9 +960,6 @@ andalusia_slot_3_missions = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -1050,9 +1023,6 @@ andalusia_slot_3_missions_b = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		has_dlc = "Golden Century"
-		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
 	
@@ -1102,10 +1072,6 @@ andalusia_slot_3_missions_c = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		has_dlc = "Golden Century"
-		NOT = { map_setup = map_setup_random }
-		is_random_new_world = no
 	}
 	has_country_shield = yes
 	
@@ -1147,12 +1113,6 @@ granada_slot_4_missions = {
 	}
 	potential = {
         always = no
-		OR = {
-			tag = GRA
-			tag = ADU
-		}
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -1231,9 +1191,6 @@ andalusia_slot_4_missions = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -1424,10 +1381,6 @@ andalusia_slot_4_missions_b = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		NOT = { map_setup = map_setup_random }
-		is_random_new_world = no
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -1468,9 +1421,6 @@ andalusia_slot_4_missions_c = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -1604,12 +1554,6 @@ granada_slot_5_missions = {
 	}
 	potential = {
         always = no
-		OR = {
-			tag = GRA
-			tag = ADU
-		}
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	
@@ -1779,9 +1723,6 @@ andalusia_slot_5_missions = {
 	}
 	potential = {
         always = no
-		tag = ADU
-		NOT = { map_setup = map_setup_random }
-		has_dlc = "Golden Century"
 	}
 	has_country_shield = yes
 	

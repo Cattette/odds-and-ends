@@ -1,0 +1,76 @@
+namespace = flavor_adu
+
+#Andalusian Convert or Accept Path
+country_event = {
+	id = flavor_adu.1
+	title = "flavor_adu.1.t"
+	desc = "flavor_adu.1.desc"
+	picture = BIG_ARABIAN_CITY_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = flavor_adu.1.a
+
+		add_country_modifier = {
+			name = adu_convert_heathens
+			duration = 7300
+		}
+
+		set_country_flag = convert_flag
+	}
+
+	option = {
+		name = flavor_adu.1.b
+
+		add_country_modifier = {
+			name = adu_accept_heathens
+			duration = 7300
+		}
+
+		add_years_of_estate_land_income = 0.35
+
+		set_country_flag = accept_flag
+	}
+}
+
+country_event = {
+	id = flavor_adu.2
+	title = "flavor_adu.2.t"
+	desc = "flavor_adu.2.desc"
+	picture = MUSLIM_PAGAN_DISPUTE_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = flavor_adu.2.a
+
+	}
+
+	option = {
+		name = flavor_adu.2.b
+
+	}
+}
+
+country_event = {
+	id = flavor_adu.3
+	title = "flavor_adu.3.t"
+	desc = "flavor_adu.3.desc"
+	picture = BIG_BOOK_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = flavor_adu.3.a
+
+	}
+
+	option = {
+		name = flavor_adu.3.b
+
+	}
+}
