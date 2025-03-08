@@ -44,11 +44,12 @@ decline_of_nubia = {
 	on_monthly = {
 		random_events = {
 			1000 = 0
-			100 = cNubia_events.11
-			100 = cNubia_events.12
-			100 = cNubia_events.13
-			100 = cNubia_events.14
-			100 = cNubia_events.15
+			50 = cNubia_events.11
+			50 = cNubia_events.12
+			50 = cNubia_events.13
+			50 = cNubia_events.14
+			50 = cNubia_events.15
+			50 = cNubia_events.16
 		}
 	}
 }

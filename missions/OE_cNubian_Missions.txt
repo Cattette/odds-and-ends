@@ -36,8 +36,6 @@ gen_christian_nubia_2 = {
 	}
 }
 
-
-
 gen_christian_nubia_2_locked = {
 	slot = 2
 	generic = yes
@@ -147,19 +145,11 @@ gen_christian_nubia_2_unlocked = {
 				}
 				custom_tooltip = yes
 				custom_tooltip = nubian_allies_friend
-				MAK = { add_trust = { who = ALO value = 25 } }
-				ALO = { add_trust = { who = MAK value = 25 } }
+				country_event = { id = cNubia_events.3 }
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_enemy
 				tooltip = {
-					if = { 
-						limit = { tag = MAK }
-						add_casus_belli = { type = cb_restore_personal_union target = ALO months = 12 }
-					}
-					if = { 
-						limit = { tag = ALO }
-						add_casus_belli = { type = cb_restore_personal_union target = MAK months = 12 }
-					}
+					country_event = { id = cNubia_events.2 }
 				}
 			}
 			if = {
@@ -182,38 +172,21 @@ gen_christian_nubia_2_unlocked = {
 				}
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_friend
-				tooltip = { 
-					MAK = { add_trust = { who = ALO value = 25 } }
-					ALO = { add_trust = { who = MAK value = 25 } }
-				}
+				tooltip = { country_event = { id = cNubia_events.3 } }
 				custom_tooltip = yes
 				custom_tooltip = nubian_allies_enemy
-				if = { 
-					limit = { tag = MAK }
-					add_casus_belli = { type = cb_restore_personal_union target = ALO months = 12 }
-				}
-				if = { 
-					limit = { tag = ALO }
-					add_casus_belli = { type = cb_restore_personal_union target = MAK months = 12 }
-				}			}
+				country_event = { id = cNubia_events.2 }
+			}
 			else = {
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_friend
 				tooltip = {
-					MAK = { add_trust = { who = ALO value = 25 } }
-					ALO = { add_trust = { who = MAK value = 25 } }
+					country_event = { id = cNubia_events.3 }
 				}
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_enemy
 				tooltip = { 					
-					if = { 
-						limit = { tag = MAK }
-						add_casus_belli = { type = cb_restore_personal_union target = ALO months = 12 }
-					}
-					if = { 
-						limit = { tag = ALO }
-						add_casus_belli = { type = cb_restore_personal_union target = MAK months = 12 }
-					}
+					country_event = { id = cNubia_events.2 }
 				}
 			}
 		}
@@ -242,7 +215,116 @@ gen_christian_nubia_3_unlocked = {
 			stability = 1
 			NOT = { num_of_rebel_controlled_provinces = 1 }
 			all_subject_country = { NOT = { liberty_desire = 50 } }
+			is_year = 1450
 		}
-		effect = {  }
+		effect = {
+			custom_tooltip = sudan_secure_stability_tt
+			hidden_effect = { set_country_flag = sudan_somewhat_stable }
+		}
+	}
+
+	sudan_royal_army = {
+		icon = mission_unknown_mission
+		position = 3
+		required_missions = { sudan_secure_stability }
+		trigger = {
+			num_of_infantry = 10
+			manpower_percentage = 0.5
+			custom_trigger_tooltip = {
+				tooltip = sudan_royal_army_tt
+				all_country = {
+					OR = {
+						NOT = { capital_scope = { region = sudan_region } }
+						NOT = { army_size = root }
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = royal_army_of_sudan
+				duration = 3650
+			}
+		}
+	}
+}
+
+gen_christian_nubia_4_unlocked = {
+	slot = 4
+	generic = yes
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		has_country_flag = is_nubian_leader
+	}
+	has_country_shield = yes
+
+	sudan_reconquer_cores = {
+		icon = mission_unknown_mission
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = sudan_reconquer_cores_tt
+				all_province = {
+					OR = {
+						NOT = { is_core = root }
+						owned_by = root
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			is_core = root
+			NOT = { owned_by = root }
+		}
+		effect = {
+			capital_scope = {
+				add_random_development = 1
+				add_random_development = 1
+			}
+		}
+	}
+}
+
+gen_christian_nubia_5_unlocked = {
+	slot = 5
+	generic = yes
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		has_country_flag = is_nubian_leader
+	}
+	has_country_shield = yes
+
+	rekindle_coptic_faith = {
+		icon = mission_unknown_mission
+		position = 2
+		required_missions = { }
+		trigger = {
+			capital_scope = {
+				has_tax_building_trigger = yes
+			}
+		}
+		provinces_to_highlight = {
+			is_capital_of = root
+			has_tax_building_trigger = no
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = new_center_of_coptic_faith
+					duration = 5475
+				}
+			}
+		}
 	}
 }

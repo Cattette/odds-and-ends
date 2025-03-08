@@ -33,3 +33,268 @@ country_event = {
 		}
 	}
 }
+# PU event
+country_event = { 
+	id = cNubia_events.2
+	title = cNubia_events.2.t
+	desc = cNubia_events.2.d
+	picture = COURT_eventPicture 
+	
+	is_triggered_only = yes	
+	fire_only_once = yes
+	
+	option = {
+		name = cNubia_events.2.a
+		if = { 
+			limit = { tag = MAK }
+			add_casus_belli = { type = cb_restore_personal_union target = ALO months = 120 }
+		}
+		if = { 
+			limit = { tag = ALO }
+			add_casus_belli = { type = cb_restore_personal_union target = MAK months = 120 }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+}
+# alliance event
+country_event = { 
+	id = cNubia_events.3
+	title = cNubia_events.3.t
+	desc = cNubia_events.3.d
+	picture = COURT_eventPicture 
+	
+	is_triggered_only = yes	
+	fire_only_once = yes
+	
+	option = {
+		name = cNubia_events.3.a
+		add_country_modifier = { name = cnubia_diplomat duration = 3650 }
+		if = {
+			limit = { tag = MAK }
+			ALO = { country_event = { id = cNubia_events.4 days = 15 } }
+		}
+		if = {
+			limit = { tag = ALO }
+			MAK = { country_event = { id = cNubia_events.4 days = 15 } }
+		}
+		ai_chance = {
+			factor = 1
+		}
+	}
+	# lets not
+	option = {
+		name = cNubia_events.3.b
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+}
+# alliance request
+country_event = { 
+	id = cNubia_events.4
+	title = cNubia_events.4.t
+	desc = cNubia_events.4.d
+	picture = COURT_eventPicture 
+	
+	is_triggered_only = yes	
+	fire_only_once = yes
+	# yes
+	option = {
+		name = cNubia_events.4.a
+		trigger = { tag = MAK }
+		create_alliance = ALO
+		ai_chance = {
+			factor = 1
+		}
+	}
+	# yes
+	option = {
+		name = cNubia_events.4.b
+		trigger = { tag = ALO }
+		create_alliance = MAK
+		ai_chance = {
+			factor = 1
+		}
+	}
+	# no
+	option = {
+		name = cNubia_events.4.c
+
+		ai_chance = {
+			factor = 0
+		}
+	}
+	after = {
+		if = {
+			limit = { 
+				OR = {
+					ALO = { alliance_with = MAK }
+					MAK = { alliance_with = ALO }
+				}
+			 }
+			from = {
+				country_event = { id = cNubia_events.5 days = 15 }
+				add_trust = {
+					who = root
+					value = 100
+					mutual = yes
+				}
+			}
+		}
+	}
+}
+# alliance yes notification to requester
+country_event = { 
+	id = cNubia_events.5
+	title = cNubia_events.5.t
+	desc = cNubia_events.5.d
+	picture = COURT_eventPicture 
+	
+	is_triggered_only = yes	
+	fire_only_once = yes
+	
+	option = {
+		name = cNubia_events.5.a
+		custom_tooltip = cNubia_events.5.a.tt
+	}
+}
+
+
+#########################
+##Nubia disaster events##
+#########################
+# nubia disaster start
+country_event = { 
+	id = cNubia_events.10
+	title = cNubia_events.10.t
+	desc = cNubia_events.10.d
+	picture = FAMINE_eventPicture 
+	
+	is_triggered_only = yes	
+	fire_only_once = yes
+	
+	option = {
+		name = cNubia_events.10.a
+		add_prestige = -25
+		add_stability = -1
+		custom_tooltip = cNubia_events.10.a.tt
+	}
+}
+# random event 1
+country_event = { 
+	id = cNubia_events.11
+	title = cNubia_events.11.t
+	desc = cNubia_events.11.d
+	picture = COPTIC_BISHOP_eventPicture 
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = cNubia_events.11.a
+		add_prestige = 5
+	}
+}
+# random event 2
+country_event = { 
+	id = cNubia_events.12
+	title = cNubia_events.12.t
+	desc = cNubia_events.12.d
+	picture = ARMY_WITH_MONASTERY_eventPicture 
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = cNubia_events.12.a
+		add_manpower = 2
+	}
+	option = {
+		name = cNubia_events.12.b
+		random_province = { add_random_development = 1 }
+	}
+}
+# random event 3
+country_event = { 
+	id = cNubia_events.13
+	title = cNubia_events.13.t
+	desc = cNubia_events.13.d
+	picture = OVEREXTENSION_eventPicture 
+	
+	is_triggered_only = yes	
+
+	trigger = {
+		NOT = { has_country_flag = sudan_somewhat_stable }
+	}
+	
+	option = {
+		name = cNubia_events.13.a
+		add_adm_power = -25
+	}
+}
+# random event 4
+country_event = { 
+	id = cNubia_events.14
+	title = cNubia_events.14.t
+	desc = cNubia_events.14.d
+	picture = AFRICAN_BATTLE_eventPicture 
+	
+	is_triggered_only = yes	
+
+	trigger = {
+		NOT = { has_country_flag = sudan_somewhat_stable }
+	}
+	
+	option = {
+		name = cNubia_events.14.a
+		random_owned_province = { add_random_development = -1 }
+	}
+}
+# random event 5
+country_event = { 
+	id = cNubia_events.15
+	title = cNubia_events.15.t
+	desc = cNubia_events.15.d
+	picture = BAD_WITH_MONARCH_eventPicture 
+	
+	is_triggered_only = yes	
+
+	trigger = {
+		NOT = { has_country_flag = sudan_somewhat_stable }
+	}
+	
+	option = {
+		name = cNubia_events.15.a
+		add_prestige = -15
+	}
+}
+# random event 6
+country_event = { 
+	id = cNubia_events.16
+	title = cNubia_events.16.t
+	desc = cNubia_events.16.d
+	picture = BAD_WITH_MONARCH_eventPicture 
+	
+	is_triggered_only = yes	
+
+	trigger = {
+		NOT = { has_country_flag = sudan_somewhat_stable }
+	}
+
+	immediate = {
+		random_owned_province = {
+			save_event_target_as = nomad_rebel_prov
+		}
+	}
+	
+	option = {
+		name = cNubia_events.16.a
+		event_target:nomad_rebel_prov = {
+			spawn_rebels = {
+				type = tribal_rebels
+				size = 1
+			}
+		}
+	}
+}

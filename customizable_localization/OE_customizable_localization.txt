@@ -14,3 +14,20 @@ defined_text = {
         }
     }
 }
+
+defined_text = {
+    name = GetSudanNotMe
+
+    text = {
+        localisation_key = ALO
+        trigger = {
+			tag = MAK
+        }
+    }
+    text = {
+        localisation_key = MAK
+        trigger = {
+			tag = ALO
+        }
+    }
+}
