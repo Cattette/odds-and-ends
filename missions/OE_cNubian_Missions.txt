@@ -247,6 +247,25 @@ gen_christian_nubia_3_unlocked = {
 			}
 		}
 	}
+	liberate_all_sudan = {
+		icon = mission_unknown_mission
+		position = 4
+		required_missions = { nubian_allies sudan_reconquer_cores }
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = lower_nubia_area
+				area = upper_nubia_area
+				area = dongola_area
+			}
+		}
+		trigger = {
+			tag = NBI
+		}
+		effect = {
+			
+		}
+	}
 }
 
 gen_christian_nubia_4_unlocked = {
@@ -305,10 +324,28 @@ gen_christian_nubia_5_unlocked = {
 	}
 	has_country_shield = yes
 
+	feudalism_in_sudan = {
+		icon = mission_unknown_mission
+		position = 1
+		required_missions = { }
+		trigger = {
+			has_institution = feudalism 
+		}
+		provinces_to_highlight = {
+			owned_by = root
+			NOT = { feudalism = 100 }
+		}
+		effect = {
+			add_dip_power = 50
+			add_adm_power = 50
+			add_mil_power = 50
+		}
+	}
+
 	rekindle_coptic_faith = {
 		icon = mission_unknown_mission
-		position = 2
-		required_missions = { }
+		position = 3
+		required_missions = { feudalism_in_sudan }
 		trigger = {
 			capital_scope = {
 				has_tax_building_trigger = yes

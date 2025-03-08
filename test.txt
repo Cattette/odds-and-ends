@@ -1,0 +1,6 @@
+MAK = {
+	create_subject = {
+		subject_type = personal_union
+		subject = ALO
+	}
+}
