@@ -1,0 +1,248 @@
+gen_christian_nubia_2 = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+	}
+	has_country_shield = yes
+
+	leader_of_nubian_copts = {
+		icon = mission_galleys_in_port
+		position = 1
+		required_missions = { }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = leader_of_nubian_copts_trigger
+				NOT = { any_country = { has_country_flag = is_nubian_leader } }
+
+			}
+			army_size_percentage = 1
+			legitimacy = 90
+			OR = {
+				employed_advisor = { category = MIL }
+				employed_advisor = { category = DIP }
+			}
+		}
+		effect = {
+			country_event = {
+				id = cNubia_events.1
+			}
+		}
+	}
+}
+
+
+
+gen_christian_nubia_2_locked = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential_on_load = { }
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		not = { has_country_flag = is_nubian_leader }
+	}
+	has_country_shield = yes
+
+	cnubia_hidden_1 = {
+		icon = mission_unknown_mission
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { }
+	}
+}
+
+gen_christian_nubia_2_unlocked = {
+	slot = 2
+	generic = yes
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		has_country_flag = is_nubian_leader
+	}
+	has_country_shield = yes
+
+	nubian_allies = {
+		icon = mission_galleys_in_port
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		provinces_to_highlight = {
+			OR = {
+				owned_by = MAK
+				owned_by = ALO
+			}
+			NOT = { owned_by = root }
+		}
+		trigger = {
+			OR = {
+				AND = {
+					if = {
+						limit = { tag = MAK}
+						reverse_has_opinion = { who = ALO value = 120 } 
+					}
+					if = {
+						limit = { tag = ALO }
+						reverse_has_opinion = { who = MAK value = 120 } 
+					}
+				}
+				AND = {
+					if = {
+						limit = { tag = MAK}
+						ALO = {
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+							}
+						}
+					}
+					if = {
+						limit = { tag = ALO }
+						MAK = {
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = { 
+					#ai = no
+					OR = {
+						reverse_has_opinion = { who = ALO value = 120 }
+						reverse_has_opinion = { who = MAK value = 120 } 
+					} 
+				}
+				custom_tooltip = yes
+				custom_tooltip = nubian_allies_friend
+				MAK = { add_trust = { who = ALO value = 25 } }
+				ALO = { add_trust = { who = MAK value = 25 } }
+				custom_tooltip = no
+				custom_tooltip = nubian_allies_enemy
+				tooltip = {
+					if = { 
+						limit = { tag = MAK }
+						add_casus_belli = { type = cb_restore_personal_union target = ALO months = 12 }
+					}
+					if = { 
+						limit = { tag = ALO }
+						add_casus_belli = { type = cb_restore_personal_union target = MAK months = 12 }
+					}
+				}
+			}
+			if = {
+				limit = { 
+					#ai = no
+					OR = {
+						MAK = {
+							OR = {
+								has_opinion_modifier = { who = ROOT modifier = scornfully_insulted }
+								has_opinion_modifier = { who = ROOT modifier = insulted }
+							}
+						}
+						ALO = {
+							OR = {
+								has_opinion_modifier = { who = ROOT modifier = scornfully_insulted }
+								has_opinion_modifier = { who = ROOT modifier = insulted }
+							}
+						}
+					} 
+				}
+				custom_tooltip = no
+				custom_tooltip = nubian_allies_friend
+				tooltip = { 
+					MAK = { add_trust = { who = ALO value = 25 } }
+					ALO = { add_trust = { who = MAK value = 25 } }
+				}
+				custom_tooltip = yes
+				custom_tooltip = nubian_allies_enemy
+				if = { 
+					limit = { tag = MAK }
+					add_casus_belli = { type = cb_restore_personal_union target = ALO months = 12 }
+				}
+				if = { 
+					limit = { tag = ALO }
+					add_casus_belli = { type = cb_restore_personal_union target = MAK months = 12 }
+				}			}
+			else = {
+				custom_tooltip = no
+				custom_tooltip = nubian_allies_friend
+				tooltip = {
+					MAK = { add_trust = { who = ALO value = 25 } }
+					ALO = { add_trust = { who = MAK value = 25 } }
+				}
+				custom_tooltip = no
+				custom_tooltip = nubian_allies_enemy
+				tooltip = { 					
+					if = { 
+						limit = { tag = MAK }
+						add_casus_belli = { type = cb_restore_personal_union target = ALO months = 12 }
+					}
+					if = { 
+						limit = { tag = ALO }
+						add_casus_belli = { type = cb_restore_personal_union target = MAK months = 12 }
+					}
+				}
+			}
+		}
+	}
+}
+
+gen_christian_nubia_3_unlocked = {
+	slot = 3
+	generic = yes
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		has_country_flag = is_nubian_leader
+	}
+	has_country_shield = yes
+
+	sudan_secure_stability = {
+		icon = mission_unknown_mission
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			stability = 1
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			all_subject_country = { NOT = { liberty_desire = 50 } }
+		}
+		effect = {  }
+	}
+}

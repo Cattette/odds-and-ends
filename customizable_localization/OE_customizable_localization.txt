@@ -1,0 +1,16 @@
+defined_text = {
+    name = GetWhichNubia
+
+    text = {
+        localisation_key = leader_of_nubian_copts_desc_north
+        trigger = {
+			tag = MAK
+        }
+    }
+    text = {
+        localisation_key = leader_of_nubian_copts_desc_south
+        trigger = {
+			tag = ALO
+        }
+    }
+}

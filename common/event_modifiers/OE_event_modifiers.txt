@@ -1,0 +1,4 @@
+nubia_crusader = {
+	same_religion_advisor_cost = -0.1
+	tolerance_own = 2
+}

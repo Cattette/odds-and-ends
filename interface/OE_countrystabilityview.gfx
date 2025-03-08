@@ -1,0 +1,8 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_disaster_decline_of_nubia"
+		texturefile = "gfx//interface//disasters//era_of_princes.dds"
+		noOfFrames = 3
+		loadType = "INGAME"
+	}
+}

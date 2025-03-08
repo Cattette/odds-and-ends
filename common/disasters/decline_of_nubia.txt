@@ -1,0 +1,55 @@
+decline_of_nubia = {
+	ended_by_country_breaking_to_rebels = no
+	potential = {
+		NOT = { has_country_flag = had_decline_of_nubia }
+		uses_doom = no
+		normal_or_historical_nations = yes
+		religion_group = christian
+		culture_group = sudanese
+	}
+	
+	can_start = {
+		has_any_disaster = no
+		NOT = { has_country_flag = had_decline_of_nubia }
+	}
+	
+	can_stop = { 
+		has_any_disaster = yes
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 100
+			religion_group = christian
+			culture_group = sudanese
+		}
+	}
+	
+	can_end = {
+		has_country_flag = had_decline_of_nubia
+	}
+	
+
+	modifier = {
+		administrative_efficiency = -0.1
+		stability_cost_modifier = 0.15
+		global_autonomy = 0.05
+		global_unrest = 1
+	}
+	
+	on_start = cNubia_events.10
+	on_end = cNubia_events.19
+	
+	on_monthly = {
+		random_events = {
+			1000 = 0
+			100 = cNubia_events.11
+			100 = cNubia_events.12
+			100 = cNubia_events.13
+			100 = cNubia_events.14
+			100 = cNubia_events.15
+		}
+	}
+}
+

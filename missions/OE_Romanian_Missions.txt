@@ -1,0 +1,79 @@
+romanian_missions_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = WAL
+			tag = MOL
+			tag = RMN
+			tag = TRA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	OE_Romania_Strong_Ally = {
+		icon = mercenary_companies
+		required_missions = { }
+		trigger = {
+			is_subject = no
+			if = {
+				limit = {
+					OR = {
+						POL = {exists = yes}
+						HUN = {exists = yes}
+					}
+				}
+				OR = {
+					AND = { 
+						alliance_with = HUN 
+						NOT = { alliance_with = POL
+						}
+					}
+					AND = { 
+						alliance_with = POL 
+						NOT = { alliance_with = HUN
+						}
+					}
+					
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "OE_Romania_Strong_Ally_Found"
+				duration = 7300
+			}
+			if = {
+				limit = {
+					alliance_with = POL
+					NOT = {
+						alliance_with = HUN
+					}
+				}
+			set_country_flag = rom_pol_alliance
+			}
+			else = {
+				set_country_flag = hab_black_army_unlocked
+			}
+		}
+	}
+
+	OE_Romania_Uniting_The_Counties = {
+        icon = mission_unite_home_region
+        required_missions = {OE_Romania_Strong_Ally}
+        position = 2
+        trigger = {
+            army_size_percentage = 0.9
+        }
+        effect = {
+            wallachia_area = {
+                add_permanent_claim = ROOT
+            }
+            moldavia_area = {
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+}
