@@ -12,7 +12,7 @@ gen_christian_nubia_2 = {
 	has_country_shield = yes
 
 	leader_of_nubian_copts = {
-		icon = mission_placeholder
+		icon = mission_fatimid_caliphate
 		position = 1
 		required_missions = { }
 		trigger = {
@@ -183,7 +183,7 @@ gen_christian_nubia_1_unlocked = {
 	has_country_shield = yes
 
 	sudan_ethiopia_alliance = {
-		icon = mission_placeholder
+		icon = befriend_ethiopia
 		position = 2
 		required_missions = { leader_of_nubian_copts }
 		trigger = {
@@ -221,7 +221,7 @@ gen_christian_nubia_2_unlocked = {
 	has_country_shield = yes
 
 	nubian_allies = {
-		icon = mission_placeholder
+		icon = mission_saharan_route
 		position = 3
 		required_missions = { leader_of_nubian_copts }
 		provinces_to_highlight = {
@@ -355,7 +355,7 @@ gen_christian_nubia_3_unlocked = {
 	has_country_shield = yes
 
 	sudan_reconquer_cores = {
-		icon = mission_placeholder
+		icon = mission_reconquer_ceuta
 		position = 2
 		required_missions = { leader_of_nubian_copts }
 		trigger = {
@@ -414,7 +414,7 @@ gen_christian_nubia_4_unlocked = {
 	has_country_shield = yes
 
 	sudan_secure_stability = {
-		icon = mission_placeholder
+		icon = guard_look_right
 		position = 2
 		required_missions = { leader_of_nubian_copts }
 		trigger = {
@@ -430,7 +430,7 @@ gen_christian_nubia_4_unlocked = {
 	}
 
 	sudan_royal_army = {
-		icon = mission_placeholder
+		icon = gilded_soldier
 		position = 3
 		required_missions = { sudan_secure_stability }
 		trigger = {
@@ -470,7 +470,7 @@ gen_christian_nubia_5 = {
 	has_country_shield = yes
 
 	feudalism_in_sudan = {
-		icon = mission_placeholder
+		icon = mission_arabian_fort
 		position = 1
 		required_missions = { }
 		trigger = {
@@ -488,7 +488,7 @@ gen_christian_nubia_5 = {
 	}
 
 	rekindle_coptic_faith = {
-		icon = mission_placeholder
+		icon = per_build_the_fire_temples
 		position = 3
 		required_missions = { feudalism_in_sudan }
 		trigger = {
