@@ -275,6 +275,10 @@ gen_christian_nubia_2_unlocked = {
 						}
 					}
 				}
+				OR = {
+					NOT = { exists = ALO }
+					NOT = { exists = MAK }
+				}
 			}
 		}
 		effect = {
@@ -382,12 +386,8 @@ gen_christian_nubia_3_unlocked = {
 		position = 4
 		required_missions = { nubian_allies sudan_reconquer_cores }
 		provinces_to_highlight = {
-			NOT = { owned_by = ROOT }
-			OR = {
-				area = lower_nubia_area
-				area = upper_nubia_area
-				area = dongola_area
-			}
+			NOT = { OR = { owned_by = root owned_by_subject_of = root } }
+			is_sudan_province = yes
 		}
 		trigger = {
 			tag = NBI

@@ -52,32 +52,30 @@ country_decisions = {
 			is_at_war = no
 			is_free_or_tributary_trigger = yes
 			is_nomad = no
-			OR = {
-				AND = {
-					lower_nubia_area = {
-						is_core = ROOT
-						owned_by = ROOT
-						type = all
+			custom_trigger_tooltip = {
+				tooltip = nubian_nation_tt
+				OR = {
+					all_province = {
+						OR = {
+							NOT = { is_sudan_province = yes }
+							owned_by = root
+						}
 					}
-					upper_nubia_area = {
-						is_core = ROOT
-						owned_by = ROOT
-						type = all
+					AND = {
+						OR = {
+							ALO = { is_subject_of_type_with_overlord = { who = MAK type = personal_union } }
+							MAK = { is_subject_of_type_with_overlord = { who = ALO type = personal_union } }
+						}
+						all_province = {
+							OR = {
+								NOT = { is_sudan_province = yes }
+								OR = {
+									owned_by = MAK
+									owned_by = ALO
+								}
+							}
+						}
 					}
-					dongola_area = {
-						is_core = ROOT
-						owned_by = ROOT
-						type = all
-					}
-				}
-				AND = {
-					OR = {
-						ALO = { is_subject_of_type_with_overlord = { who = MAK type = personal_union } }
-						MAK = { is_subject_of_type_with_overlord = { who = ALO type = personal_union } }
-					}
-					lower_nubia_area = { OR = { owned_by = MAK owned_by = ALO } type = all }
-					upper_nubia_area = { OR = { owned_by = MAK owned_by = ALO } type = all }
-					dongola_area =     { OR = { owned_by = MAK owned_by = ALO } type = all }
 				}
 			}
 			religion_group = christian

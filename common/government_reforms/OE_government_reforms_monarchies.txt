@@ -1,0 +1,35 @@
+nubian_matrilinear_monarchy_reform = {
+	icon = nubian_queen
+	allow_normal_conversion = no
+	potential = {
+		OR = {
+			has_reform = nubian_matrilinear_monarchy_reform
+			have_had_reform = nubian_matrilinear_monarchy_reform
+		}
+	}
+	trigger = {
+		OR = {
+			has_reform = nubian_matrilinear_monarchy_reform
+			have_had_reform = nubian_matrilinear_monarchy_reform
+		}
+	} 
+	nation_designer_trigger = {
+		# primary_culture = nubian
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+
+	custom_attributes = {
+	}
+
+	modifiers = {
+		may_recruit_female_generals = yes
+		heir_chance = -0.5
+		female_advisor_chance = 0.5
+		legitimacy = 1
+	}
+
+	ai = {
+		factor = 0
+	}
+}

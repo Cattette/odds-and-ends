@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "government_reform_nubian_queen"
+		texturefile = "gfx//interface//government_reform_icons//nubian_queen.dds"
+	}
+}

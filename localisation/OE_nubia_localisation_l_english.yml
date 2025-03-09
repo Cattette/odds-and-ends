@@ -27,6 +27,8 @@
  sudan_secure_stability_desc:0 "REPLACE_ME"
  sudan_secure_stability_tt:0 "We will be less likely to get negative events relating to our decline."
 
+ legacy_of_kush_tt:0 "§G4§! random owned provinces throughout §YEgypt§! will be converted to the true faith."
+
  # events
  cNubia_events.1.t:0 "First among the Kings"
  cNubia_events.1.d:0 "Our lands have seldom been united. Unlike our downstreams neighbors who have been united as far back as records can be read, our unity is limited to that of the tongue and faith rather than the militarily or administratively. Our lands are split between various smaller kingdoms and dependencies, often in peace and conflict with each other. While this communal existence served us well in the idylic past, current trends have made it untenable. Around us, across us, between us; our communities have been carved away and swallowed by invading interests. Even the proud kings of Egypt has long since faltered, their temples plundered, graves destroyed. Before our days are counted all of Nubia must united under [Root.Monarch.GetTitle] [Root.Monarch.GetName]."
@@ -76,3 +78,8 @@
  nubia_crusader:0 "King of Nubia"
  desc_nubia_crusader:0 "REPLACE_ME"
  sudan_region:0 "Sudan"
+ is_sudan_province_trigger_tt:0 "Is a province in [Root.NubiaOrSudan]"
+ is_nubian_tag_trigger_tt:0 "Is a Christian Nubian Country"
+ sudan_name:0 "Sudan"
+ nubia_name:0 "Nubia"
+ nubian_nation_tt:0 "One of the following must be true:\n All provinces in §y[Root.NubiaOrSudan]§! is owned by §Y[Root.GetName]§!\n All provinces in §Y[Root.NubiaOrSudan]§! is owned by §Y[Root.GetName]§! or a Nubian junior partner"
