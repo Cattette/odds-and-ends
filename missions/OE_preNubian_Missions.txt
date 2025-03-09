@@ -12,7 +12,7 @@ gen_christian_nubia_2 = {
 	has_country_shield = yes
 
 	leader_of_nubian_copts = {
-		icon = mission_galleys_in_port
+		icon = mission_placeholder
 		position = 1
 		required_missions = { }
 		trigger = {
@@ -36,6 +36,33 @@ gen_christian_nubia_2 = {
 	}
 }
 
+gen_christian_nubia_1_locked = {
+	slot = 1
+	generic = yes
+	ai = yes
+	potential_on_load = { }
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		not = { has_country_flag = is_nubian_leader }
+	}
+	has_country_shield = yes
+
+	cnubia_hidden_12 = {
+		icon = mission_unknown_mission
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { }
+	}
+}
+
 gen_christian_nubia_2_locked = {
 	slot = 2
 	generic = yes
@@ -49,7 +76,34 @@ gen_christian_nubia_2_locked = {
 	}
 	has_country_shield = yes
 
-	cnubia_hidden_1 = {
+	cnubia_hidden_23 = {
+		icon = mission_unknown_mission
+		position = 3
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { }
+	}
+}
+
+gen_christian_nubia_3_locked = {
+	slot = 3
+	generic = yes
+	ai = yes
+	potential_on_load = { }
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		not = { has_country_flag = is_nubian_leader }
+	}
+	has_country_shield = yes
+
+	cnubia_hidden_32 = {
 		icon = mission_unknown_mission
 		position = 2
 		required_missions = { leader_of_nubian_copts }
@@ -61,6 +115,95 @@ gen_christian_nubia_2_locked = {
 		}
 		effect = { }
 	}
+	cnubia_hidden_34 = {
+		icon = mission_unknown_mission
+		position = 4
+		required_missions = { cnubia_hidden_23 cnubia_hidden_32 }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { }
+	}
+}
+
+gen_christian_nubia_4_locked = {
+	slot = 4
+	generic = yes
+	ai = yes
+	potential_on_load = { }
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		not = { has_country_flag = is_nubian_leader }
+	}
+	has_country_shield = yes
+
+	cnubia_hidden_42 = {
+		icon = mission_unknown_mission
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { }
+	}
+	cnubia_hidden_43 = {
+		icon = mission_unknown_mission
+		position = 3
+		required_missions = { cnubia_hidden_42 }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = selectable_mission_trigger_tt
+				always = no
+			}
+		}
+		effect = { }
+	}
+}
+
+gen_christian_nubia_1_unlocked = {
+	slot = 1
+	generic = yes
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		has_country_flag = is_nubian_leader
+	}
+	has_country_shield = yes
+
+	sudan_ethiopia_alliance = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			OR = {
+				alliance_with = ETH
+				reverse_has_opinion = {
+					who = ETH
+					value = 180
+				}
+			}
+		}
+		effect = {
+			add_trust = {
+				who = ETH
+				value = 25
+				mutual = yes
+			}
+		}
+	}
+
 }
 
 gen_christian_nubia_2_unlocked = {
@@ -78,8 +221,8 @@ gen_christian_nubia_2_unlocked = {
 	has_country_shield = yes
 
 	nubian_allies = {
-		icon = mission_galleys_in_port
-		position = 2
+		icon = mission_placeholder
+		position = 3
 		required_missions = { leader_of_nubian_copts }
 		provinces_to_highlight = {
 			OR = {
@@ -207,83 +350,8 @@ gen_christian_nubia_3_unlocked = {
 	}
 	has_country_shield = yes
 
-	sudan_secure_stability = {
-		icon = mission_unknown_mission
-		position = 2
-		required_missions = { leader_of_nubian_copts }
-		trigger = {
-			stability = 1
-			NOT = { num_of_rebel_controlled_provinces = 1 }
-			all_subject_country = { NOT = { liberty_desire = 50 } }
-			is_year = 1450
-		}
-		effect = {
-			custom_tooltip = sudan_secure_stability_tt
-			hidden_effect = { set_country_flag = sudan_somewhat_stable }
-		}
-	}
-
-	sudan_royal_army = {
-		icon = mission_unknown_mission
-		position = 3
-		required_missions = { sudan_secure_stability }
-		trigger = {
-			num_of_infantry = 10
-			manpower_percentage = 0.5
-			custom_trigger_tooltip = {
-				tooltip = sudan_royal_army_tt
-				all_country = {
-					OR = {
-						NOT = { capital_scope = { region = sudan_region } }
-						NOT = { army_size = root }
-					}
-				}
-			}
-		}
-		effect = {
-			add_country_modifier = {
-				name = royal_army_of_sudan
-				duration = 3650
-			}
-		}
-	}
-	liberate_all_sudan = {
-		icon = mission_unknown_mission
-		position = 4
-		required_missions = { nubian_allies sudan_reconquer_cores }
-		provinces_to_highlight = {
-			NOT = { owned_by = ROOT }
-			OR = {
-				area = lower_nubia_area
-				area = upper_nubia_area
-				area = dongola_area
-			}
-		}
-		trigger = {
-			tag = NBI
-		}
-		effect = {
-			
-		}
-	}
-}
-
-gen_christian_nubia_4_unlocked = {
-	slot = 4
-	generic = yes
-	ai = yes
-	potential_on_load = {
-	}
-	potential = {
-		NOT = { map_setup = map_setup_random }
-		religion_group = christian
-		culture_group = sudanese
-		has_country_flag = is_nubian_leader
-	}
-	has_country_shield = yes
-
 	sudan_reconquer_cores = {
-		icon = mission_unknown_mission
+		icon = mission_placeholder
 		position = 2
 		required_missions = { leader_of_nubian_copts }
 		trigger = {
@@ -308,10 +376,31 @@ gen_christian_nubia_4_unlocked = {
 			}
 		}
 	}
+
+	liberate_all_sudan = {
+		icon = mission_placeholder
+		position = 4
+		required_missions = { nubian_allies sudan_reconquer_cores }
+		provinces_to_highlight = {
+			NOT = { owned_by = ROOT }
+			OR = {
+				area = lower_nubia_area
+				area = upper_nubia_area
+				area = dongola_area
+			}
+		}
+		trigger = {
+			tag = NBI
+		}
+		effect = {
+			custom_tooltip = liberate_all_sudan_tt
+			hidden_effect = { swap_non_generic_missions = yes }
+		}
+	}
 }
 
-gen_christian_nubia_5_unlocked = {
-	slot = 5
+gen_christian_nubia_4_unlocked = {
+	slot = 4
 	generic = yes
 	ai = yes
 	potential_on_load = {
@@ -324,8 +413,64 @@ gen_christian_nubia_5_unlocked = {
 	}
 	has_country_shield = yes
 
+	sudan_secure_stability = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = { leader_of_nubian_copts }
+		trigger = {
+			stability = 1
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+			all_subject_country = { NOT = { liberty_desire = 50 } }
+			is_year = 1450
+		}
+		effect = {
+			custom_tooltip = sudan_secure_stability_tt
+			hidden_effect = { set_country_flag = sudan_somewhat_stable }
+		}
+	}
+
+	sudan_royal_army = {
+		icon = mission_placeholder
+		position = 3
+		required_missions = { sudan_secure_stability }
+		trigger = {
+			num_of_infantry = 10
+			manpower_percentage = 0.5
+			custom_trigger_tooltip = {
+				tooltip = sudan_royal_army_tt
+				all_country = {
+					OR = {
+						NOT = { capital_scope = { region = sudan_region } }
+						NOT = { army_size = root }
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = royal_army_of_sudan
+				duration = 3650
+			}
+		}
+	}
+}
+
+gen_christian_nubia_5 = {
+	slot = 5
+	generic = yes
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		religion_group = christian
+		culture_group = sudanese
+		# has_country_flag = is_nubian_leader
+	}
+	has_country_shield = yes
+
 	feudalism_in_sudan = {
-		icon = mission_unknown_mission
+		icon = mission_placeholder
 		position = 1
 		required_missions = { }
 		trigger = {
@@ -343,7 +488,7 @@ gen_christian_nubia_5_unlocked = {
 	}
 
 	rekindle_coptic_faith = {
-		icon = mission_unknown_mission
+		icon = mission_placeholder
 		position = 3
 		required_missions = { feudalism_in_sudan }
 		trigger = {

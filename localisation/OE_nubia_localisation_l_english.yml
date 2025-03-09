@@ -2,8 +2,18 @@
  # missions
  yes:0 "£yes£"
  no:0 "£no£"
- cnubia_hidden_1_title:0 "[Root.GetSelectableMissionTitle]"
- cnubia_hidden_1_desc:0 "[Root.GetSelectableMissionDescription]"
+
+ cnubia_hidden_12_title:0 "[Root.GetSelectableMissionTitle]"
+ cnubia_hidden_12_desc:0 "[Root.GetSelectableMissionDescription]"
+ cnubia_hidden_23_title:0 "[Root.GetSelectableMissionTitle]"
+ cnubia_hidden_23_desc:0 "[Root.GetSelectableMissionDescription]"
+ cnubia_hidden_32_title:0 "[Root.GetSelectableMissionTitle]"
+ cnubia_hidden_32_desc:0 "[Root.GetSelectableMissionDescription]"
+ cnubia_hidden_34_title:0 "[Root.GetSelectableMissionTitle]"
+ cnubia_hidden_34_desc:0 "[Root.GetSelectableMissionDescription]"
+ cnubia_hidden_42_title:0 "[Root.GetSelectableMissionTitle]"
+ cnubia_hidden_42_desc:0 "[Root.GetSelectableMissionDescription]"
+
  leader_of_nubian_copts_title:0 "The Kingdom of Nubia"
  leader_of_nubian_copts_desc:0 "§TThis is a timed mission shared between other countries. If another nation completes this mission we will be unable to complete this tree.§!\n\n[Root.GetWhichNubia]"
  leader_of_nubian_copts_trigger:0 "No other country has established itself as the dominant Christian kingdom in Nubia"
