@@ -1,0 +1,27 @@
+﻿l_english:
+ # missions
+ ire_develop_capital_title: "The Main Gem"
+ ire_develop_capital_desc: "REPLACE_ME"
+ ire_develop_island_title: "Emerald Isle"
+ ire_develop_island_desc: "REPLACE_ME"
+ ireland_develop_capital: "Irish Urban Center"
+ desc_ireland_develop_capital: "REPLACE_ME"
+ ireland_develop_island: "Island of Workers"
+ desc_ireland_develop_island: "REPLACE_ME"
+ irish_new_mexico_title: "Meicsiceach"
+ irish_new_mexico_desc: "REPLACE_ME"
+ ire_culture_wales_title: "Retake Cymru"
+ ire_culture_wales_desc: "REPLACE_ME"
+ ire_culture_english_title: "People of Albion"
+ ire_culture_english_desc: "REPLACE_ME"
+ a_true_celt_king: "Ruler of Brythonia"
+ desc_a_true_celt_king: "REPLACE_ME"
+ # other
+ ireland_ignore_tech_ct: "Forming @IRE §YIreland§! no longer requires us to have §YAdministrative Technology 10§!."
+ ire_potato_forever_yes: "\n£yes£ If we complete this mission while '§YPotato Imports§!' modifier is still active, it will become §Gpermanent§!."
+ ire_potato_forever_no: "\n£no£ If we complete this mission while '§YPotato Imports§!' modifier is still active, it will become §Gpermanent§!."
+ ire_celtic_england_ct: "Every §YEnglish§! province we own will become §YSassanic§!, and join our §YCulture§! group."
+ # culture
+ cyrmry:0 "Cyrmry"
+ sassanic:0 "Sassanic"
+ brythonic:0 "Brythonic"

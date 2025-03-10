@@ -76,4 +76,30 @@ romanian_missions_1 = {
             }
         }
     }
+	OE_Romania_United = {
+		icon = mission_conquer_50_development
+		required_missions = {OE_Romania_Uniting_The_Counties}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				OR = {
+					area = wallachia_area
+					area = moldavia_area
+					area = southern_transylvania_area
+					area = transylvania_area
+				}
+				value = 12
+			}
+			4531 = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}	
+		effect = {
+			add_prestige = 30
+			add_country_modifier = {
+				name = "OE_Romania_United"
+				duration = 3650
+			}
+		}
+	}
+
 }
