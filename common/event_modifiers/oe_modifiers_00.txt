@@ -14,3 +14,15 @@ adu_accept_heathens = {
 	dhimmi_loyalty_modifier = 0.10
 	tolerance_heathen = 1.5
 }
+ireland_develop_island = {
+	production_efficiency = 0.10
+	development_cost_in_primary_culture = -0.10
+}
+ireland_develop_capital = {
+	local_tax_modifier = 0.10
+	local_production_efficiency = 0.15
+}
+a_true_celt_king = {
+	land_morale = 0.10
+	years_of_nationalism = -5
+}

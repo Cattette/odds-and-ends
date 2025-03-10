@@ -617,7 +617,7 @@ adu_slot_2_missions = {
 		effect = {
 			add_adm_power = 200
 			country_event = {
-				id = andalusia_accept_convert.1
+				id = flavor_adu.1
 			}
 			galicia_area = {
 				limit = {

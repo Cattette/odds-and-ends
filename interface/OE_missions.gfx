@@ -1,0 +1,26 @@
+spriteTypes = {
+	spriteType = {
+		name = "land_of_ireland"
+		texturefile = "gfx/interface/missions/land_of_ireland.dds"
+	}
+	spriteType = {
+		name = "emerald_isle_capital"
+		texturefile = "gfx/interface/missions/emerald_isle_capital.dds"
+	}
+	spriteType = {
+		name = "irish_mexico"
+		texturefile = "gfx/interface/missions/irish_mexico.dds"
+	}
+	spriteType = {
+		name = "a_celtic_kingdom"
+		texturefile = "gfx/interface/missions/a_celtic_kingdom.dds"
+	}
+	spriteType = {
+		name = "celtic_canada"
+		texturefile = "gfx/interface/missions/celtic_canada.dds"
+	}
+	spriteType = {
+		name = "celtic_wales"
+		texturefile = "gfx/interface/missions/celtic_wales.dds"
+	}
+}
