@@ -1,0 +1,138 @@
+NBI_ideas = {
+	start = {
+		stability_cost_modifier = -0.1
+		hostile_attrition = 1
+	}
+	
+	bonus = {
+		fire_damage = 0.1
+	}
+	
+	trigger = {
+		tag = NBI
+		NOT = { has_country_flag = nubia_prof_flag }
+		NOT = { has_country_flag = nubia_trad_flag }
+
+	}
+	free = yes
+	
+	nbi_our_land = {
+		global_unrest = -2
+	}
+	
+	nbi_religious_friction = {
+		global_missionary_strength = 0.02
+	}
+	
+	nbi_desert_knowledge = {
+		land_attrition = -0.1
+	}
+	
+	nbi_military_strength = {
+		discipline = 0.05
+	}
+	
+	nbi_nile_control = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	nbi_christian_ties = {
+		tolerance_own = 2
+	}
+	
+	nbi_egyptian_relations = {
+		adm_tech_cost_modifier = -0.1
+	}
+}
+
+NBI_ideas_prof = {
+	start = {
+		stability_cost_modifier = -0.1
+		hostile_attrition = 1
+	}
+	
+	bonus = {
+		fire_damage = 0.1
+	}
+	
+	trigger = {
+		tag = NBI
+		has_country_flag = nubia_prof_flag
+	}
+	free = yes
+	
+	nbi_our_land = {
+		global_unrest = -2
+	}
+	
+	nbi_religious_friction = {
+		global_missionary_strength = 0.02
+	}
+	
+	nbi_desert_knowledge = {
+		land_attrition = -0.1
+	}
+	
+	nbi_military_strength_prof = {
+		discipline = 0.05
+		infantry_fire = 1
+	}
+	
+	nbi_nile_control = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	nbi_christian_ties = {
+		tolerance_own = 2
+	}
+	
+	nbi_egyptian_relations = {
+		adm_tech_cost_modifier = -0.1
+	}
+}
+
+NBI_ideas_trad = {
+	start = {
+		stability_cost_modifier = -0.1
+		hostile_attrition = 1
+	}
+	
+	bonus = {
+		fire_damage = 0.1
+	}
+	
+	trigger = {
+		tag = NBI
+		has_country_flag = nubia_trad_flag
+	}
+	free = yes
+	
+	nbi_our_land = {
+		global_unrest = -2
+	}
+	
+	nbi_religious_friction = {
+		global_missionary_strength = 0.02
+	}
+	
+	nbi_desert_knowledge = {
+		land_attrition = -0.1
+	}
+	
+	nbi_military_strength_trad = {
+		discipline = 0.05
+		land_morale = 0.1
+	}
+	
+	nbi_nile_control = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	
+	nbi_christian_ties = {
+		tolerance_own = 2
+	}
+	
+	nbi_egyptian_relations = {
+		adm_tech_cost_modifier = -0.1
+	}
+}

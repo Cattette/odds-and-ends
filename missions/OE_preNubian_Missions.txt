@@ -488,7 +488,7 @@ gen_christian_nubia_5 = {
 	}
 
 	rekindle_coptic_faith = {
-		icon = per_build_the_fire_temples
+		icon = nubian_architecture
 		position = 3
 		required_missions = { feudalism_in_sudan }
 		trigger = {

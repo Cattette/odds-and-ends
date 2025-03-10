@@ -1,6 +1,4 @@
-MAK = {
-	create_subject = {
-		subject_type = personal_union
-		subject = ALO
-	}
+hidden_effect = {
+	set_country_flag = nubia_trad_flag
+	swap_free_idea_group = yes
 }

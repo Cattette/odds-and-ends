@@ -10,5 +10,17 @@ spriteTypes = {
 		name = "gilded_soldier"
 		texturefile = "gfx//interface//missions/gilded_soldier.dds"
 	}
+	spriteType = {
+		name = "nubian_architecture"
+		texturefile = "gfx//interface//missions/nubian_architecture.dds"
+	}
+	spriteType = {
+		name = "nubian_architecture2"
+		texturefile = "gfx//interface//missions/nubian_architecture2.dds"
+	}
+	spriteType = {
+		name = "mapegypt"
+		texturefile = "gfx//interface//missions/mapegypt.dds"
+	}
 	
 }

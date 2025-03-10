@@ -12,3 +12,9 @@ royal_army_of_sudan = {
 new_center_of_coptic_faith = {
 	local_tax_modifier = 0.15
 }
+egypt_trader = {
+	caravan_power = 0.15
+}
+aden_trader = {
+	ship_trade_power_modifier = 0.1
+}

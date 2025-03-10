@@ -11,50 +11,16 @@ nubia_2 = {
 	}
 	has_country_shield = yes
 
-	reconquer_nobatia = {
-		icon = mission_placeholder
+	matrilinear_succession = {
+		icon = mission_vedic_education
 		position = 5
 		required_missions = { liberate_all_sudan }
 		trigger = {
-			1231 = { owned_by = root is_core = root }
-		}
-		provinces_to_highlight = {
-			province_id = 1231
-			NOT = { owned_by = root }
+			reform_level = 5
 		}
 		effect = {
-			give_claims = { region = egypt_region }
-		}
-	}
-	legacy_of_kush = {
-		icon = mission_placeholder
-		position = 5
-		required_missions = { reconquer_nobatia }
-		trigger = {
-			OR = {
-				361 = { owned_by = root }
-				358 = { owned_by = root }
-			}
-		}
-		provinces_to_highlight = {
-			OR = {
-				province_id = 361
-				province_id = 358
-			}
-			NOT = { owned_by = root }
-		}
-		effect = {
-			custom_tooltip = legacy_of_kush_tt
-			hidden_effect = {
-				for = {
-					amount = 4
-					effect = "
-						random_owned_province = {
-							limit = { region = egypt_region owned_by = root }
-							change_religion = root
-						}
-					"
-				}
+			country_event = {
+				id = cNubia_events.6
 			}
 		}
 	}
@@ -93,7 +59,7 @@ nubia_3 = {
 		}
 	}
 	gates_to_arabia = {
-		icon = mission_placeholder
+		icon = mission_control_the_red_sea
 		position = 5
 		required_missions = { subjugate_the_nomads }
 		trigger = {
@@ -127,16 +93,97 @@ nubia_4 = {
 	}
 	has_country_shield = yes
 
-	matrilinear_succession = {
+
+	nubian_fire = {
 		icon = mission_placeholder
+		position = 4
+		required_missions = { sudan_royal_army }
+		trigger = {
+			army_size = 35
+			OR = {
+				army_professionalism = 0.6
+				army_tradition = 80
+			}
+		}
+		effect = {
+			if = {
+				limit = { army_professionalism = 0.6  }
+				custom_tooltip = yes
+				custom_tooltip = nubian_fire_prof_reward
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = no
+				custom_tooltip = nubian_fire_trad_reward
+				hidden_effect = {
+					set_country_flag = nubia_prof_flag
+					swap_free_idea_group = yes
+				}
+			}
+			else_if = {
+				limit = { army_tradition = 80 }
+				custom_tooltip = no
+				custom_tooltip = nubian_fire_prof_reward
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = yes
+				custom_tooltip = nubian_fire_trad_reward
+				hidden_effect = {
+					set_country_flag = nubia_trad_flag
+					swap_free_idea_group = yes
+				}
+			}
+			else = {
+				custom_tooltip = no
+				custom_tooltip = nubian_fire_prof_reward
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = no
+				custom_tooltip = nubian_fire_trad_reward
+			}
+		}
+	}
+
+	reconquer_nobatia = {
+		icon = mission_break_the_mamluks
 		position = 5
 		required_missions = { liberate_all_sudan }
 		trigger = {
-			reform_level = 5
+			1231 = { owned_by = root is_core = root }
+		}
+		provinces_to_highlight = {
+			province_id = 1231
+			NOT = { owned_by = root }
 		}
 		effect = {
-			country_event = {
-				id = cNubia_events.6
+			give_claims = { region = egypt_region }
+		}
+	}
+	legacy_of_kush = {
+		icon = mapegypt
+		position = 5
+		required_missions = { reconquer_nobatia }
+		trigger = {
+			OR = {
+				361 = { owned_by = root }
+				358 = { owned_by = root }
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361
+				province_id = 358
+			}
+			NOT = { owned_by = root }
+		}
+		effect = {
+			custom_tooltip = legacy_of_kush_tt
+			hidden_effect = {
+				for = {
+					amount = 4
+					effect = "
+						random_owned_province = {
+							limit = { region = egypt_region owned_by = root }
+							change_religion = root
+						}
+					"
+				}
 			}
 		}
 	}
@@ -156,7 +203,7 @@ nubia_5 = {
 	has_country_shield = yes
 
 	nubian_architecture = {
-		icon = mission_placeholder
+		icon = nubian_architecture2
 		position = 4
 		required_missions = { rekindle_coptic_faith }
 		trigger = {
@@ -176,6 +223,100 @@ nubia_5 = {
 		effect = {
 			capital_scope = {
 				upgrade_tax_building = yes
+			}
+		}
+	}
+
+	restore_nile_trade = {
+		icon = mission_placeholder
+		position = 7
+		required_missions = { legacy_of_kush nubian_architecture }
+		trigger = {
+			all_owned_province = {
+				NOT = { province_has_center_of_trade_of_level = 1 }
+				has_trade_building_trigger = yes
+			}
+			2772 = { is_strongest_trade_power = root }
+			OR = {
+				# egypt node
+				358 = { has_merchant = root }
+				# aden node
+				4346 = { has_merchant = root }
+			}
+		}
+		provinces_to_highlight = {
+			owned_by = root
+			province_has_center_of_trade_of_level = 1
+			has_trade_building_trigger = no
+		}
+		effect = {
+			if = {
+				limit = {
+					NOT = { 358 = { has_merchant = root } }
+					NOT = { 4346 = { has_merchant = root } }
+				}
+				custom_tooltip = no
+				custom_tooltip = restore_nile_trade_egypt
+				tooltip = {
+					add_country_modifier = {
+						name = egypt_trader
+						duration = -1
+					}
+					358 = { add_trade_node_income = 10 }
+				}
+				custom_tooltip = no
+				custom_tooltip = restore_nile_trade_aden
+				tooltip = {
+					add_country_modifier = {
+						name = aden_trader
+						duration = -1
+					}
+					4346 = { add_trade_node_income = 10 }
+				}
+			}
+			if = {
+				limit = {
+					358 = { has_merchant = root }
+					NOT = { 4346 = { has_merchant = root } }
+				}
+				custom_tooltip = yes
+				custom_tooltip = restore_nile_trade_egypt
+				add_country_modifier = {
+					name = egypt_trader
+					duration = -1
+				}
+				358 = { add_trade_node_income = 10 }
+				custom_tooltip = no
+				custom_tooltip = restore_nile_trade_aden
+				tooltip = {
+					add_country_modifier = {
+						name = aden_trader
+						duration = -1
+					}
+					4346 = { add_trade_node_income = 10 }
+				}
+			}
+			if = {
+				limit = {
+					NOT = { 358 = { has_merchant = root } }
+					4346 = { has_merchant = root } 
+				}
+				custom_tooltip = no
+				custom_tooltip = restore_nile_trade_egypt
+				tooltip = {
+					add_country_modifier = {
+						name = egypt_trader
+						duration = -1
+					}
+					358 = { add_trade_node_income = 10 }
+				}
+				custom_tooltip = yes
+				custom_tooltip = restore_nile_trade_aden
+				add_country_modifier = {
+					name = aden_trader
+					duration = -1
+				}
+				4346 = { add_trade_node_income = 10 }
 			}
 		}
 	}
