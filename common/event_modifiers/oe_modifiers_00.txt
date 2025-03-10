@@ -14,3 +14,7 @@ adu_accept_heathens = {
 	dhimmi_loyalty_modifier = 0.10
 	tolerance_heathen = 1.5
 }
+OE_Romania_United = {
+	land_morale = 0.1
+	ae_impact = 0.1
+}
