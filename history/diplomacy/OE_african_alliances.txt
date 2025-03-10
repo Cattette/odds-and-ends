@@ -1,0 +1,6 @@
+guarantee = {
+	first = MAM
+	second = BEJ
+	start_date = 1444.1.1
+	end_date = 1500.1.1
+}

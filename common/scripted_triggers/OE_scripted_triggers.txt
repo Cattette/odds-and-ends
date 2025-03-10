@@ -1,0 +1,30 @@
+is_sudan_province = {
+	if = {
+		limit = { NOT = { has_global_flag = OE_province_mod } } 
+		custom_trigger_tooltip = {
+			tooltip = is_sudan_province_trigger_tt
+			OR = { 
+				area = lower_nubia_area
+				area = dongola_area
+				area = upper_nubia_area
+			}
+		}
+	}
+}
+
+is_nubian_tag = {
+	custom_trigger_tooltip = {
+		tooltip = is_nubian_tag_trigger_tt
+		religion_group = christian
+		OR = {
+			tag = ALO
+			tag = MAK
+		}
+	}
+}
+
+is_sudanese_tag = {
+	OR = {
+		tag = ABB
+	}
+}

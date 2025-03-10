@@ -31,3 +31,15 @@ defined_text = {
         }
     }
 }
+
+defined_text = {
+    name = NubiaOrSudan
+    text = {
+        localisation_key = sudan_name
+        trigger = { religion_group = muslim }
+    }
+    text = {
+        localisation_key = nubia_name
+        trigger = { NOT = { religion_group = muslim } }
+    }
+}

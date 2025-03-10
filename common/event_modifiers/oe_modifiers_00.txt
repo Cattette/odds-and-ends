@@ -26,3 +26,7 @@ a_true_celt_king = {
 	land_morale = 0.10
 	years_of_nationalism = -5
 }
+OE_Romania_United = {
+	land_morale = 0.1
+	ae_impact = 0.1
+}

@@ -1,0 +1,182 @@
+nubia_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		# religion_group = christian culture_group = sudanese
+		tag = NBI
+	}
+	has_country_shield = yes
+
+	reconquer_nobatia = {
+		icon = mission_placeholder
+		position = 5
+		required_missions = { liberate_all_sudan }
+		trigger = {
+			1231 = { owned_by = root is_core = root }
+		}
+		provinces_to_highlight = {
+			province_id = 1231
+			NOT = { owned_by = root }
+		}
+		effect = {
+			give_claims = { region = egypt_region }
+		}
+	}
+	legacy_of_kush = {
+		icon = mission_placeholder
+		position = 5
+		required_missions = { reconquer_nobatia }
+		trigger = {
+			OR = {
+				361 = { owned_by = root }
+				358 = { owned_by = root }
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 361
+				province_id = 358
+			}
+			NOT = { owned_by = root }
+		}
+		effect = {
+			custom_tooltip = legacy_of_kush_tt
+			hidden_effect = {
+				for = {
+					amount = 4
+					effect = "
+						random_owned_province = {
+							limit = { region = egypt_region owned_by = root }
+							change_religion = root
+						}
+					"
+				}
+			}
+		}
+	}
+}
+
+nubia_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		# religion_group = christian culture_group = sudanese
+		tag = NBI
+	}
+	has_country_shield = yes
+
+	subjugate_the_nomads = {
+		icon = mission_placeholder
+		position = 5
+		required_missions = { liberate_all_sudan }
+		trigger = {
+			red_sea_coast_area = {
+				owned_by = root
+				is_core = root
+				type = all
+			}
+		}
+		provinces_to_highlight = {
+			area = red_sea_coast_area
+			NOT = { owned_by = root }
+		}
+		effect = {
+			1232 = { center_of_trade = 1 }
+		}
+	}
+	gates_to_arabia = {
+		icon = mission_placeholder
+		position = 5
+		required_missions = { subjugate_the_nomads }
+		trigger = {
+			1215 = {
+				owned_by = root
+				is_core = root
+			}
+		}
+		provinces_to_highlight = {
+			province_id = 1215
+			NOT = { owned_by = root }
+		}
+		effect = {
+			give_claims = { area = tihama_al_yemen_area }
+			give_claims = { area = upper_yemen_area }
+			give_claims = { area = yemen_area }
+		}
+	}
+}
+
+nubia_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		# religion_group = christian culture_group = sudanese
+		tag = NBI
+	}
+	has_country_shield = yes
+
+	matrilinear_succession = {
+		icon = mission_placeholder
+		position = 5
+		required_missions = { liberate_all_sudan }
+		trigger = {
+			reform_level = 5
+		}
+		effect = {
+			country_event = {
+				id = cNubia_events.6
+			}
+		}
+	}
+}
+
+nubia_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		# religion_group = christian culture_group = sudanese
+		tag = NBI
+	}
+	has_country_shield = yes
+
+	nubian_architecture = {
+		icon = mission_placeholder
+		position = 4
+		required_missions = { rekindle_coptic_faith }
+		trigger = {
+			capital_scope = {
+				has_tax_building_trigger = yes
+				num_of_times_expanded_infrastructure = 1
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				has_tax_building_trigger = yes
+			}
+		}
+		provinces_to_highlight = {
+			has_tax_building_trigger = no
+			owned_by = root
+		}
+		effect = {
+			capital_scope = {
+				upgrade_tax_building = yes
+			}
+		}
+	}
+}

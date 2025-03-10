@@ -1,0 +1,14 @@
+	
+spriteTypes = {	
+	
+	
+	spriteType = {
+		name = "guard_look_right"
+		texturefile = "gfx//interface//missions/guard_look_right.dds"
+	}
+	spriteType = {
+		name = "gilded_soldier"
+		texturefile = "gfx//interface//missions/gilded_soldier.dds"
+	}
+	
+}
