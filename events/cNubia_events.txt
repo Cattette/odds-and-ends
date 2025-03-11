@@ -166,7 +166,8 @@ country_event = {
 	id = cNubia_events.6
 	title = cNubia_events.6.t
 	desc = cNubia_events.6.d
-	picture = COURT_eventPicture 
+	# picture = QUEEN_AND_MALE_HEIR_eventPicture 
+	picture = QUEEN_AT_COUNCIL_TABLE_eventPicture
 	
 	is_triggered_only = yes	
 	fire_only_once = yes
@@ -176,6 +177,75 @@ country_event = {
 		custom_tooltip = cNubia_events.6.a.tt
 		change_government = monarchy
 		add_government_reform = nubian_matrilinear_monarchy_reform
+		add_stability = -1
+	}
+	option = {
+		name = cNubia_events.6.b
+		add_prestige = 10
+	}
+}
+# late capital event
+country_event = { 
+	id = cNubia_events.7
+	title = cNubia_events.7.t
+	desc = cNubia_events.7.d
+	picture = CITY_DEVELOPMENT_eventPicture 
+	
+	is_triggered_only = yes	
+	fire_only_once = yes
+	# qasr ibrim
+	option = {
+		name = cNubia_events.7.a
+		if = {
+			limit = { NOT = { capital = 1234 } }
+			set_capital = 1234
+			add_adm_power = -75
+			1234 = {
+				add_province_modifier = {
+					name = birth_of_a_new_city_adm
+					duration = 5475
+				}
+			}
+		}
+		else = {
+			1234 = { add_base_tax = 2 }
+		}
+	}
+	# dongola
+	option = {
+		name = cNubia_events.7.b
+		if = {
+			limit = { NOT = { capital = 1228 } }
+			set_capital = 1228
+			add_adm_power = -75
+			1228 = {
+				add_province_modifier = {
+					name = birth_of_a_new_city_adm
+					duration = 5475
+				}
+			}
+		}
+		else = {
+			1228 = { add_base_tax = 2 }
+		}
+	}
+	# soba
+	option = {
+		name = cNubia_events.7.c
+		if = {
+			limit = { NOT = { capital = 2798 } }
+			set_capital = 2798
+			add_adm_power = -75
+			2798 = {
+				add_province_modifier = {
+					name = birth_of_a_new_city_adm
+					duration = 5475
+				}
+			}
+		}
+		else = {
+			2798 = { add_base_tax = 2 }
+		}
 	}
 }
 

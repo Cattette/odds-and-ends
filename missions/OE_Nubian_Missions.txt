@@ -1,3 +1,73 @@
+nubia_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential_on_load = {
+	}
+	potential = {
+		NOT = { map_setup = map_setup_random }
+		# religion_group = christian culture_group = sudanese
+		tag = NBI
+	}
+	has_country_shield = yes
+
+	faith_of_nubia = {
+		icon = mission_interfaith_relations
+		position = 6
+		required_missions = { }
+		trigger = {
+			OR = {
+				theologian = 2
+				inquisitor = 2
+			}
+		}
+		effect = {
+			if = {
+				limit = { theologian = 2 }
+				custom_tooltip = yes
+				custom_tooltip = BUFF_INTERFAITH_DIALOG
+				hidden_effect = { set_country_flag = ned_buff_interfaith_dialog_clergy_loyalty_flag }
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = no
+				custom_tooltip = BUFF_ENFORCED_ONE_FAITH_CONV
+			}
+			else_if = {
+				limit = { inquisitor= 2 }
+				custom_tooltip = no
+				custom_tooltip = BUFF_INTERFAITH_DIALOG
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = yes
+				custom_tooltip = BUFF_ENFORCED_ONE_FAITH_CONV
+				hidden_effect = { set_country_flag = buff_enforced_one_faith_conv }
+			}
+			else = {
+				custom_tooltip = no
+				custom_tooltip = BUFF_INTERFAITH_DIALOG
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = no
+				custom_tooltip = BUFF_ENFORCED_ONE_FAITH_CONV
+			}
+		}
+	}
+	the_coptic_patriarchate = {
+		icon = coptic_cathedral
+		position = 7
+		required_missions = { faith_of_nubia }
+		trigger = {
+			religion = coptic
+			owns = 358
+			is_defender_of_faith = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = coptic_papacy_custodian
+				duration = -1
+			}
+			358 = { upgrade_tax_building = yes }
+		}
+	}
+}
+
 nubia_2 = {
 	slot = 2
 	generic = no
@@ -40,7 +110,7 @@ nubia_3 = {
 	has_country_shield = yes
 
 	subjugate_the_nomads = {
-		icon = mission_placeholder
+		icon = mission_sw_against_the_desert
 		position = 5
 		required_missions = { liberate_all_sudan }
 		trigger = {
@@ -95,7 +165,7 @@ nubia_4 = {
 
 
 	nubian_fire = {
-		icon = mission_placeholder
+		icon = mission_son_military_expertise
 		position = 4
 		required_missions = { sudan_royal_army }
 		trigger = {
@@ -187,6 +257,31 @@ nubia_4 = {
 			}
 		}
 	}
+	nubian_capital = {
+		icon = nile_city
+		position = 8
+		required_missions = { legacy_of_kush restore_nile_trade }
+		trigger = {
+			treasury = 800
+			adm_power = 75
+			1234 = { owned_by = root is_core = root }
+			1228 = { owned_by = root is_core = root }
+			2798 = { owned_by = root is_core = root }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1234 # qasr ibrim
+				province_id = 1228 # dongola
+				province_id	= 2798 # soba
+			}
+		}
+		effect = {
+			country_event_with_insight = {
+				id = cNubia_events.7
+				insight_tooltip = nubian_capital_tt
+			}
+		}
+	}
 }
 
 nubia_5 = {
@@ -228,7 +323,7 @@ nubia_5 = {
 	}
 
 	restore_nile_trade = {
-		icon = mission_placeholder
+		icon = nile_vessel
 		position = 7
 		required_missions = { legacy_of_kush nubian_architecture }
 		trigger = {

@@ -22,5 +22,16 @@ spriteTypes = {
 		name = "mapegypt"
 		texturefile = "gfx//interface//missions/mapegypt.dds"
 	}
-	
+	spriteType = {
+		name = "nile_vessel"
+		texturefile = "gfx//interface//missions/nile_vessel.dds"
+	}
+	spriteType = {
+		name = "nile_city"
+		texturefile = "gfx//interface//missions/nile_city.dds"
+	}
+	spriteType = {
+		name = "coptic_cathedral"
+		texturefile = "gfx//interface//missions/coptic_cathedral.dds"
+	}
 }

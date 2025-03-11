@@ -18,3 +18,7 @@ egypt_trader = {
 aden_trader = {
 	ship_trade_power_modifier = 0.1
 }
+coptic_papacy_custodian = {
+	prestige = 1
+	tolerance_own = 2
+}
