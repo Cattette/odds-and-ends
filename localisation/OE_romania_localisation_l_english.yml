@@ -1,0 +1,12 @@
+﻿l_english:
+ # events
+ OE_Romania.1.t:0 "The Situation in [Root.GetName]"
+ OE_Romania.1.d:0 "Both Wallachia and Moldavia find themselves caught between powerful forces, struggling to maintain their autonomy amid growing external pressures. As vassals of the Ottoman Empire, they were bound to pay tribute and offer military support, yet their ties to Hungary and the wider Christian world often pulled them in the opposite direction. Internally, succession disputes and noble conflicts further weaken their stability, leaving them vulnerable to foreign intervention. With war on the horizon and alliances shifting, both principalities face an uncertain future, their survival hinging on their ability to navigate the treacherous diplomacy of the region."
+ OE_Romania.1.a:0 "Only time will tell."
+ OE_Romania.3.t:0 "The Ottoman Tribute"
+ OE_Romania.3.d:0 "The envoys of the Ottoman Sultan arrive at our court, their message clear and uncompromising. As a protector of our lands, the Sultan demands the renewal of our tribute, a price for the continued 'privilege' of self-rule. To refuse would be to risk his wrath, yet to submit is to acknowledge our subservience."
+ OE_Romania.3.a:0 "Send him gold, to fill his treasury."
+ OE_Romania.3.b:0 "Send him men, to fight in his wars."
+
+ # modifiers
+ OE_has_payed_ottoman_tribute:0 "Payed tribute to the Sultan"

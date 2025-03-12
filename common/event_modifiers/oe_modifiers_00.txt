@@ -30,3 +30,6 @@ OE_Romania_United = {
 	land_morale = 0.1
 	ae_impact = 0.1
 }
+OE_has_payed_ottoman_tribute = {
+	local_unrest = 1
+}
