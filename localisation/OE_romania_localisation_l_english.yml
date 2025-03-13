@@ -8,5 +8,18 @@
  OE_Romania.3.a:0 "Send him gold, to fill his treasury."
  OE_Romania.3.b:0 "Send him men, to fight in his wars."
 
- # modifiers
+ #modifiers
  OE_has_payed_ottoman_tribute:0 "Payed tribute to the Sultan"
+ OE_balkan_orthodoxy:0 "Balkan Orthodoxy"
+ OE_Romania_United:0 "Romania United"
+ OE_Romania_Strong_Ally_Found:0 "A Strong Ally"
+ 
+#missions
+ OE_Romania_Strong_Ally_title:0 "A Strong Ally"
+ OE_Romania_Uniting_The_Counties_title:0 "Uniting The Counties"
+ OE_Counties_United_title:0 "Romania United"
+ OE_romania_build_churches_title:0 "Churches of [Root.GetName]"
+ OE_Balkan_orthodoxy_title:0 "Balkan Orthodoxy"
+
+#tooltips
+ rom_strong_ally_tooltip:0 "If we complete this mission by allying §THungary§! we will get access to the §JBlack Army§! mercenay company.\nIf we complete this mission by allying §TPoland§! we will get access to §Jspecial§! mercenary unit composed of §JHussars§!."

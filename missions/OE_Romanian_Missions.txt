@@ -15,6 +15,7 @@ romanian_missions_1 = {
 
 	OE_Romania_Strong_Ally = {
 		icon = mercenary_companies
+		position = 1
 		required_missions = { }
 		trigger = {
 			is_subject = no
@@ -42,7 +43,7 @@ romanian_missions_1 = {
 		}
 		effect = {
 			add_prestige = 10
-			add_legitimacy_equivalent = 10
+			add_legitimacy = 10
 			add_country_modifier = {
 				name = "OE_Romania_Strong_Ally_Found"
 				duration = 7300
@@ -59,6 +60,7 @@ romanian_missions_1 = {
 			else = {
 				set_country_flag = hab_black_army_unlocked
 			}
+			custom_tooltip = rom_strong_ally_tooltip
 		}
 	}
 
@@ -81,6 +83,7 @@ romanian_missions_1 = {
 	OE_Counties_United = {
 		icon = mission_conquer_50_development
 		required_missions = {OE_Romania_Uniting_The_Counties}
+		position = 3
 		trigger = {
 			owns_all_provinces = {
 				area = moldavia_area
@@ -94,6 +97,63 @@ romanian_missions_1 = {
 				name = "OE_Counties_United"
 				duration = 3650
 			}
+		}
+	}
+}
+
+romanian_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = WAL
+			tag = MOL
+			tag = RMN
+			tag = TRA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	OE_romania_build_churches = {
+		icon = mission_placeholder
+		position = 1
+
+		trigger = {
+			any_owned_province = {
+				temple = 1
+			}
+		}
+		effect = {
+			add_patriarch_authority = 0.10
+			add_prestige = 20
+		}
+	}
+	OE_Balkan_orthodoxy = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = {OE_romania_build_churches}
+
+		trigger = {
+			any_ally = {
+				AND = {
+					OR = {
+						capital_scope = {
+							region = balkan_region
+							region = carpathia_region
+						}
+					}
+					religion = orthodox
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = OE_balkan_orthodoxy
+				duration = 5478
+			}
+			add_dip_power = 50
 		}
 	}
 }
