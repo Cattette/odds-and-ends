@@ -4,7 +4,7 @@ oe_greece_finest_navy_ever = {
 }
 OE_Romania_Strong_Ally_Found = {
 	diplomatic_reputation = 1
-	improve_relation_modifier = 0.2
+	land_morale = 0.1
 }
 adu_convert_heathens = {
 	global_heathen_missionary_strength = 0.02
@@ -26,8 +26,8 @@ a_true_celt_king = {
 	land_morale = 0.10
 	years_of_nationalism = -5
 }
-OE_Romania_United = {
-	land_morale = 0.1
+OE_Counties_United = {
+	manpower_recovery_speed = 0.2
 	ae_impact = 0.1
 }
 OE_has_payed_ottoman_tribute = {
