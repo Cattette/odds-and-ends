@@ -19,14 +19,6 @@ country_event = {
 		hidden_effect = {
 			set_country_flag = is_nubian_leader
 			swap_non_generic_missions = yes
-			if = {
-				limit = { tag = MAK }
-				ALO = { complete_mission = leader_of_nubian_copts }
-			}
-			if = {
-				limit = { tag = ALO }
-				MAK = { complete_mission = leader_of_nubian_copts }
-			}
 		}
 		ai_chance = {
 			factor = 1
@@ -63,7 +55,7 @@ country_event = {
 	id = cNubia_events.3
 	title = cNubia_events.3.t
 	desc = cNubia_events.3.d
-	picture = COURT_eventPicture 
+	picture = COURT_eventPicture
 	
 	is_triggered_only = yes	
 	fire_only_once = yes
@@ -104,45 +96,27 @@ country_event = {
 	# yes
 	option = {
 		name = cNubia_events.4.a
-		trigger = { tag = MAK }
-		create_alliance = ALO
-		ai_chance = {
-			factor = 1
+		add_favors = {
+			who = from
+			amount = 25
 		}
-	}
-	# yes
-	option = {
-		name = cNubia_events.4.b
-		trigger = { tag = ALO }
-		create_alliance = MAK
+		from = {
+			add_favors = {
+				who = root
+				amount = 25
+			}
+			country_event = { id = cNubia_events.5 days = 15 }
+		}
 		ai_chance = {
 			factor = 1
 		}
 	}
 	# no
 	option = {
-		name = cNubia_events.4.c
+		name = cNubia_events.4.b
 
 		ai_chance = {
 			factor = 0
-		}
-	}
-	after = {
-		if = {
-			limit = { 
-				OR = {
-					ALO = { alliance_with = MAK }
-					MAK = { alliance_with = ALO }
-				}
-			 }
-			from = {
-				country_event = { id = cNubia_events.5 days = 15 }
-				add_trust = {
-					who = root
-					value = 100
-					mutual = yes
-				}
-			}
 		}
 	}
 }
@@ -159,6 +133,18 @@ country_event = {
 	option = {
 		name = cNubia_events.5.a
 		custom_tooltip = cNubia_events.5.a.tt
+		tooltip = {
+			add_favors = {
+				who = from
+				amount = 25
+			}
+			from = {
+				add_favors = {
+					who = root
+					amount = 25
+				}
+			}
+		}
 	}
 }
 # matrilinear government event
@@ -381,6 +367,27 @@ country_event = {
 				type = tribal_rebels
 				size = 1
 			}
+		}
+	}
+}
+# disaster end event
+country_event = { 
+	id = cNubia_events.19
+	title = cNubia_events.19.t
+	desc = cNubia_events.19.d
+	picture = ASKIA_eventPicture 
+	
+	is_triggered_only = yes	
+
+	trigger = { }
+	
+	option = {
+		name = cNubia_events.19.a
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		ai_chance = {
+			factor = 1
 		}
 	}
 }

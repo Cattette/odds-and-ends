@@ -233,19 +233,11 @@ gen_christian_nubia_2_unlocked = {
 		}
 		trigger = {
 			OR = {
+				MAK = { alliance_with = ALO }
+				ALO = { alliance_with = MAK }
 				AND = {
 					if = {
-						limit = { tag = MAK}
-						reverse_has_opinion = { who = ALO value = 120 } 
-					}
-					if = {
-						limit = { tag = ALO }
-						reverse_has_opinion = { who = MAK value = 120 } 
-					}
-				}
-				AND = {
-					if = {
-						limit = { tag = MAK}
+						limit = { tag = MAK }
 						ALO = {
 							OR = {
 								has_opinion_modifier = {
@@ -275,65 +267,102 @@ gen_christian_nubia_2_unlocked = {
 						}
 					}
 				}
-				OR = {
-					NOT = { exists = ALO }
-					NOT = { exists = MAK }
-				}
+				NOT = { exists = MAK }
+				NOT = { exists = ALO }
 			}
+
 		}
 		effect = {
 			if = {
-				limit = { 
-					#ai = no
+				limit = {
 					OR = {
-						reverse_has_opinion = { who = ALO value = 120 }
-						reverse_has_opinion = { who = MAK value = 120 } 
-					} 
+						MAK = { alliance_with = ALO }
+						ALO = { alliance_with = MAK }
+					}
 				}
 				custom_tooltip = yes
 				custom_tooltip = nubian_allies_friend
 				country_event = { id = cNubia_events.3 }
+				custom_tooltip = mission_alternatively_tt
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_enemy
-				tooltip = {
-					country_event = { id = cNubia_events.2 }
-				}
+				tooltip = { country_event = { id = cNubia_events.2 } }
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = no
+				custom_tooltip = nubian_allies_other
 			}
-			if = {
+			else_if = {
 				limit = { 
-					#ai = no
-					OR = {
-						MAK = {
-							OR = {
-								has_opinion_modifier = { who = ROOT modifier = scornfully_insulted }
-								has_opinion_modifier = { who = ROOT modifier = insulted }
-							}
-						}
+					if = {
+						limit = { tag = MAK }
 						ALO = {
 							OR = {
-								has_opinion_modifier = { who = ROOT modifier = scornfully_insulted }
-								has_opinion_modifier = { who = ROOT modifier = insulted }
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
 							}
 						}
-					} 
+					}
+					if = {
+						limit = { tag = ALO }
+						MAK = {
+							OR = {
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = scornfully_insulted
+								}
+								has_opinion_modifier = {
+									who = ROOT
+									modifier = insulted
+								}
+							}
+						}
+					}
 				}
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_friend
 				tooltip = { country_event = { id = cNubia_events.3 } }
+				custom_tooltip = mission_alternatively_tt
 				custom_tooltip = yes
 				custom_tooltip = nubian_allies_enemy
-				country_event = { id = cNubia_events.2 }
+				tooltip = { country_event = { id = cNubia_events.2 } }
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = no
+				custom_tooltip = nubian_allies_other
+
 			}
+			# if all else fail
 			else = {
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_friend
-				tooltip = {
-					country_event = { id = cNubia_events.3 }
-				}
+				tooltip = { country_event = { id = cNubia_events.3 } }
+				custom_tooltip = mission_alternatively_tt
 				custom_tooltip = no
 				custom_tooltip = nubian_allies_enemy
-				tooltip = { 					
-					country_event = { id = cNubia_events.2 }
+				tooltip = { country_event = { id = cNubia_events.2 } }
+				custom_tooltip = mission_alternatively_tt
+				custom_tooltip = yes
+				custom_tooltip = nubian_allies_other
+				hidden_effect = {
+					if = { 
+						limit = { tag = MAK }
+						sudan_region = {
+							limit = { is_core = ALO }
+							add_permanent_claim = root
+						}
+					}
+					if = { 
+						limit = { tag = ALO }
+						sudan_region = {
+							limit = { is_core = MAK }
+							add_permanent_claim = root
+						}
+					}
 				}
 			}
 		}
@@ -382,7 +411,7 @@ gen_christian_nubia_3_unlocked = {
 	}
 
 	liberate_all_sudan = {
-		icon = mission_placeholder
+		icon = mission_turning_the_tables
 		position = 4
 		required_missions = { nubian_allies sudan_reconquer_cores }
 		provinces_to_highlight = {
@@ -394,7 +423,10 @@ gen_christian_nubia_3_unlocked = {
 		}
 		effect = {
 			custom_tooltip = liberate_all_sudan_tt
-			hidden_effect = { swap_non_generic_missions = yes }
+			hidden_effect = {
+				swap_non_generic_missions = yes
+				set_country_flag = had_decline_of_nubia
+			}
 		}
 	}
 }

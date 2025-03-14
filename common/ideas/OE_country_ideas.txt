@@ -75,7 +75,7 @@ NBI_ideas_prof = {
 	
 	nbi_military_strength_prof = {
 		discipline = 0.05
-		infantry_fire = 1
+		infantry_fire = 0.5
 	}
 	
 	nbi_nile_control = {

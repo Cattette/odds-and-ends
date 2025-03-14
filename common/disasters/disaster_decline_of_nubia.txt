@@ -10,6 +10,7 @@ decline_of_nubia = {
 	
 	can_start = {
 		has_any_disaster = no
+		NOT = { mission_completed = liberate_all_sudan }
 		NOT = { has_country_flag = had_decline_of_nubia }
 	}
 	
@@ -27,7 +28,11 @@ decline_of_nubia = {
 	}
 	
 	can_end = {
-		has_country_flag = had_decline_of_nubia
+		mission_completed = liberate_all_sudan
+		custom_trigger_tooltip = {
+			tooltip = " "
+			has_country_flag = had_decline_of_nubia
+		}
 	}
 	
 
@@ -44,12 +49,12 @@ decline_of_nubia = {
 	on_monthly = {
 		random_events = {
 			1000 = 0
-			50 = cNubia_events.11
-			50 = cNubia_events.12
-			50 = cNubia_events.13
-			50 = cNubia_events.14
-			50 = cNubia_events.15
-			50 = cNubia_events.16
+			25 = cNubia_events.11
+			25 = cNubia_events.12
+			25 = cNubia_events.13
+			25 = cNubia_events.14
+			25 = cNubia_events.15
+			25 = cNubia_events.16
 		}
 	}
 }
