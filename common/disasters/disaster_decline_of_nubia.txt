@@ -55,6 +55,7 @@ decline_of_nubia = {
 			25 = cNubia_events.14
 			25 = cNubia_events.15
 			25 = cNubia_events.16
+			25 = cNubia_events.17
 		}
 	}
 }

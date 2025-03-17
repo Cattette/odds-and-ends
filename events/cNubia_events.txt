@@ -280,7 +280,7 @@ country_event = {
 	
 	option = {
 		name = cNubia_events.12.a
-		add_manpower = 2
+		add_manpower = 1
 	}
 	option = {
 		name = cNubia_events.12.b
@@ -354,6 +354,8 @@ country_event = {
 		NOT = { has_country_flag = sudan_somewhat_stable }
 	}
 
+	goto = nomad_rebel_prov
+
 	immediate = {
 		random_owned_province = {
 			save_event_target_as = nomad_rebel_prov
@@ -368,6 +370,24 @@ country_event = {
 				size = 1
 			}
 		}
+	}
+}
+# random event 7
+country_event = { 
+	id = cNubia_events.17
+	title = cNubia_events.17.t
+	desc = cNubia_events.17.d
+	picture = BAD_WITH_MONARCH_eventPicture 
+	
+	is_triggered_only = yes	
+
+	trigger = {
+		NOT = { has_country_flag = sudan_somewhat_stable }
+	}
+	
+	option = {
+		name = cNubia_events.17.a
+		add_years_of_income = -0.5
 	}
 }
 # disaster end event

@@ -18,7 +18,7 @@
 
 
  leader_of_nubian_copts_title:0 "The Kingdom of Nubia"
- leader_of_nubian_copts_desc:0 "§TThis is a timed mission shared between other countries. If another nation completes this mission we will be unable to complete this tree.§!\n\n[Root.GetWhichNubia]"
+ leader_of_nubian_copts_desc:0 "§TThis is a timed mission shared between other countries. If any other nation completes this mission we will be unable to advance this tree.§!\n\n[Root.GetWhichNubia]"
  leader_of_nubian_copts_trigger:0 "No other country has established itself as the dominant Christian kingdom in Nubia"
  leader_of_nubian_copts_desc_north:0 "The Kingdom of Makuria used to stretch across the most fertile lands of Kush. All along the Nile from Upper Egypt to Soba they knew our law. However, centuries of decline have taken their toll. Islamic invasions have severed our ties to Christendom beyond the Nile, and even our former capital, Dongola, has fallen under their yoke.\n\nIf we are to prevail we must establish ourselves as the primary Nubian kingdom behind which the remaining faithful can rally."
  leader_of_nubian_copts_desc_south:0 "Due to our placement in the uppermost reaches of Nubia, our kingdom was forged as a bullwark against Nomadic incursions. The weakness of our northern brothers have left us isolated and surrounded by greater and greater amounts of nomads now united behind a common prophet.\n\nIf we are to stand a chance against them we must establish ourselves as the primary Nubian kingdom behind which the remaining faithful must rally."
@@ -145,7 +145,7 @@
  is_nubian_tag_trigger_tt:0 "Is a Christian Nubian Country"
  sudan_name:0 "Sudan"
  nubia_name:0 "Nubia"
- nubian_nation_tt:0 "One of the following must be true:\n All provinces in §y[Root.NubiaOrSudan]§! is owned by §Y[Root.GetName]§!\n All provinces in §Y[Root.NubiaOrSudan]§! is owned by §Y[Root.GetName]§! or a Nubian junior partner"
+ nubian_nation_tt:0 "One of the following must be true:\n All provinces in §Y[Root.NubiaOrSudan]§! is owned by §Y[Root.GetName]§!\n All provinces in §Y[Root.NubiaOrSudan]§! is owned by §Y[Root.GetName]§! or a Nubian junior partner"
 
  cnubia_diplomat:0 "Coptic Diplomacy"
  desc_cnubia_diplomat:0 "In these trying times only faith can unite us" 
