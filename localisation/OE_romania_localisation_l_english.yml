@@ -13,6 +13,10 @@
  OE_balkan_orthodoxy:0 "Balkan Orthodoxy"
  OE_Romania_United:0 "Romania United"
  OE_Romania_Strong_Ally_Found:0 "A Strong Ally"
+ OE_romania_boyar_manpower:0 "Decreased Boyar Influence"
+ OE_romania_boyar_under_control:0 "Control Over Boyar's Ambitions"
+ OE_romania_restore_market:0 "Markets Restored"
+ OE_romania_break_tribute:0 "Freed From The Sultan's Yoke"
  
 #missions
  OE_Romania_Strong_Ally_title:0 "A Strong Ally"
@@ -20,6 +24,11 @@
  OE_Counties_United_title:0 "Romania United"
  OE_romania_build_churches_title:0 "Churches of [Root.GetName]"
  OE_Balkan_orthodoxy_title:0 "Balkan Orthodoxy"
+ OE_restore_dynasty_title:0 "Restore Our Dynasty"
+ OE_control_boyar_title:0 "Curb Boyar's Ambitions"
+ OE_restore_markets_title:0 "Restore The Markets"
+ OE_danube_trade_title:0 "Danubian Trade"
 
 #tooltips
- rom_strong_ally_tooltip:0 "If we complete this mission by allying §THungary§! we will get access to the §JBlack Army§! mercenay company.\nIf we complete this mission by allying §TPoland§! we will get access to §Jspecial§! mercenary unit composed of §JHussars§!."
+ rom_strong_ally_tooltip:0 "If we complete this mission by allying §THungary§! we will get access to the §JBlack Army§! mercenay company.\n\nIf we complete this mission by allying §TPoland§! we will get access to §Jspecial§! mercenary unit composed of §JHussars§!."
+ ROM_DAN_TRADE:0 "Danubian Trade"

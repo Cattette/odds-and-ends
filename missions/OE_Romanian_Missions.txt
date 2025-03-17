@@ -13,6 +13,64 @@ romanian_missions_1 = {
 	}
 	has_country_shield = yes
 
+	OE_Romania_Uniting_The_Counties = {
+        icon = mission_unite_home_region
+        required_missions = {}
+        position = 1
+        trigger = {
+            army_size_percentage = 0.9
+        }
+        effect = {
+            wallachia_area = {
+                add_permanent_claim = ROOT
+            }
+            moldavia_area = {
+                add_permanent_claim = ROOT
+            }
+        }
+    }
+	OE_Counties_United = {
+		icon = mission_conquer_50_development
+		required_missions = {OE_Romania_Uniting_The_Counties}
+		position = 2
+		trigger = {
+			owns_all_provinces = {
+				area = moldavia_area
+				area = wallachia_area
+			}
+		}	
+		effect = {
+			add_country_modifier = {
+				name = OE_Counties_United
+				duration = 3650
+			}
+			hidden_effect = {
+				moldavia_area = {
+					years_of_nationalism = -10
+				}
+				wallachia_area = {
+					years_of_nationalism = -10
+				}
+			}
+		}
+	}
+}
+
+romanian_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = WAL
+			tag = MOL
+			tag = RMN
+			tag = TRA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
 	OE_Romania_Strong_Ally = {
 		icon = mercenary_companies
 		position = 1
@@ -63,46 +121,73 @@ romanian_missions_1 = {
 			custom_tooltip = rom_strong_ally_tooltip
 		}
 	}
+}
 
-	OE_Romania_Uniting_The_Counties = {
-        icon = mission_unite_home_region
-        required_missions = {OE_Romania_Strong_Ally}
-        position = 2
-        trigger = {
-            army_size_percentage = 0.9
-        }
-        effect = {
-            wallachia_area = {
-                add_permanent_claim = ROOT
-            }
-            moldavia_area = {
-                add_permanent_claim = ROOT
-            }
-        }
-    }
-	OE_Counties_United = {
-		icon = mission_conquer_50_development
-		required_missions = {OE_Romania_Uniting_The_Counties}
-		position = 3
+romanian_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = WAL
+			tag = MOL
+			tag = RMN
+			tag = TRA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	OE_restore_dynasty = {
+		icon = mission_placeholder
+		position = 1
+
 		trigger = {
-			owns_all_provinces = {
-				area = moldavia_area
-				area = wallachia_area
-			}
-		}	
+			monthly_adm = 6
+			monthly_dip = 6
+			monthly_mil = 6
+		}
+
 		effect = {
-			add_nationalism = -10
-			add_nationalism = -10
 			add_country_modifier = {
-				name = "OE_Counties_United"
-				duration = 3650
+				name = OE_romania_boyar_manpower
+				duration = 7300
+			}
+			add_estate_influence_modifier = {
+				estate = estate_nobles
+				desc = OE_romania_less_boyar_influence
+				influence = -10
+				duration = 7300
+			}
+		}
+	}
+
+	OE_control_boyar = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = {OE_restore_dynasty}
+
+		trigger = {
+			AND = {
+				crown_land_share = 30
+				num_of_estate_agendas_completed = {
+					estate = estate_nobility
+					value = 3
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = OE_romania_boyar_under_control
+				duration = 7300
 			}
 		}
 	}
 }
 
-romanian_missions_2 = {
-	slot = 2
+romanian_missions_4 = {
+	slot = 4
 	generic = no
 	ai = yes
 	potential = {
@@ -154,6 +239,157 @@ romanian_missions_2 = {
 				duration = 5478
 			}
 			add_dip_power = 50
+		}
+	}
+}
+
+romanian_missions_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	potential = {
+		OR = {
+			tag = WAL
+			tag = MOL
+			tag = RMN
+			tag = TRA
+		}
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	OE_restore_markets = {
+		icon = mission_placeholder
+		position = 1
+
+		trigger = {
+			capital_scope = {
+				num_of_times_improved = 5
+				has_building = marketplace
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = OE_romania_restore_market
+				duration = 9131
+			}
+			capital_scope = {
+				province_trade_power_modifier = 0.1
+				province_trade_power_value = 0.5
+			}
+		}
+	}
+
+	OE_danube_trade = {
+		icon = mission_placeholder
+		position = 2
+
+		trigger = {
+			if = {
+				limit = {
+					OR = {
+						tag = WAL
+						tag = ROM
+						tag = TRA
+					}
+				}
+				153 = {
+					trade_share = {
+						country = ROOT
+						share = 20
+					}
+				}
+			}
+			else = {
+				284 = {
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					OR = {
+						tag = WAL
+						tag = TRA
+						tag = ROM
+					}
+				}
+				153 = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 5475
+						power = 15
+						key = ROM_DAN_TRADE
+					}
+				}
+			}
+			else = {
+				284 = {
+					add_trade_modifier = {
+						who = ROOT
+						duration = 5475
+						power = 15
+						key = ROM_DAN_TRADE
+					}
+				}
+			}
+			capital_scope = {
+				if = {
+					limit = { 
+						province_has_center_of_trade_of_level = 1
+					}
+					add_center_of_trade_level = 1
+				}
+				else = {
+					center_of_trade = 1
+				}
+			}
+		}
+	}
+	
+	OE_break_ottoman_tribute = {
+		icon = mission_placeholder
+		position = 3
+
+		trigger = {
+			has_won_war_against = {
+				who = TUR
+				max_years_since = 10
+			}
+			TUR = {
+				NOT = {
+					num_of_owned_provinces_with = {
+						value = 7
+						region = balkan_region
+					}
+				}
+			}
+		}
+
+		effect = {
+			if = {
+				limit = { 
+					tag = WAL
+				}
+				clr_country_flag = OE_Wallachia_tribute
+				add_treasury = 250
+				add_country_modifier = {
+					name = OE_romania_break_tribute
+					duration = 7300
+				}
+			}
+			else = {
+				clr_country_flag = OE_Moldavia_tribute
+				add_treasury = 250
+				add_country_modifier = {
+					name = OE_romania_break_tribute
+					duration = 7300
+				}
+			}
 		}
 	}
 }
