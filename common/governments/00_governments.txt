@@ -4,6 +4,7 @@ monarchy = {
 		feudalism_vs_autocracy = {
 			reforms = {
 				nubian_matrilinear_monarchy_reform
+				brythonic_monarchy_reform
 				feudalism_reform
 				autocracy_reform
 				elective_monarchy_reform

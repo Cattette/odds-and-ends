@@ -26,6 +26,14 @@ a_true_celt_king = {
 	land_morale = 0.10
 	years_of_nationalism = -5
 }
+ire_incorporate_scots = {
+	discipline = 0.025
+	shock_damage_received = -0.05
+}
+
+celtic_conversion_buff = {
+	culture_conversion_cost = -0.10
+}
 OE_Romania_United = {
 	land_morale = 0.1
 	ae_impact = -0.1

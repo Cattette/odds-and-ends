@@ -33,3 +33,40 @@ nubian_matrilinear_monarchy_reform = {
 		factor = 0
 	}
 }
+brythonic_monarchy_reform = {
+	icon = "brythonic_banner"
+	allow_normal_conversion = yes
+	potential = {
+		primary_culture = irish
+	}
+	nation_designer_trigger = {
+		primary_culture = irish
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 10
+	modifiers = {
+		all_estate_loyalty_equilibrium = 0.10
+		morale_damage = 0.05
+		global_manpower_modifier = 0.15
+	}
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		custom_attributes = {
+			has_ruler_election = yes
+			has_improved_ruler_election = yes
+			gain_rt_from_parliament = yes
+		}
+	}
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			}
+		}
+		has_parliament = yes
+	}
+	ai = {
+		factor = 1
+	}
+}

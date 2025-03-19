@@ -23,4 +23,16 @@ spriteTypes = {
 		name = "celtic_wales"
 		texturefile = "gfx/interface/missions/celtic_wales.dds"
 	}
+	spriteType = {
+		name = "map_of_ireland"
+		texturefile = "gfx/interface/missions/map_of_ireland.dds"
+	}
+	spriteType = {
+		name = "english_army"
+		texturefile = "gfx/interface/missions/english_army.dds"
+	}
+	spriteType = {
+		name = "unify_brythonia"
+		texturefile = "gfx/interface/missions/unify_brythonia.dds"
+	}
 }
