@@ -136,3 +136,85 @@ NBI_ideas_trad = {
 		adm_tech_cost_modifier = -0.1
 	}
 }
+
+GZI_ideas = {
+	start = {
+		fort_maintenance_modifier = -0.1
+		land_morale = 0.1
+	}
+
+	bonus = {
+		trade_efficiency = 0.2
+	}
+	
+	trigger = {
+		tag = GZI
+	}
+	free = yes
+	
+	gzi_stone_masonry = {
+		build_cost = -0.15
+		development_cost = -0.1
+		#great_project_upgrade_cost = -0.1
+	}
+	gzi_ivory_trade = {
+		global_trade_goods_size_modifier = 0.1
+	}
+	gzi_gold_deposits = {
+		global_tax_modifier = 0.1
+		monthly_gold_inflation_modifier = -0.2
+	}
+	gzi_zimbabwes_walls = {
+		defensiveness = 0.25
+	}
+	gzi_lay_of_the_land = {
+		hostile_attrition = 1
+	}
+	gzi_tributary_system = {
+		vassal_income = 0.2
+	}
+	gzi_zimbabwe_birds = {
+		production_efficiency = 0.1
+	}
+}
+
+RZI_ideas = {
+	start = {  
+		land_morale = 0.1
+		infantry_cost = -0.1
+	}
+  
+	bonus = {
+		shock_damage_received = -0.1
+	}
+  
+	trigger = {
+		tag = RZI
+	}
+	free = yes
+  
+	rzi_zimbabwe_incarnate = {
+		build_cost = -0.1
+		development_cost = -0.1
+	}
+	rzi_strict_gold_regulations = {
+		inflation_reduction = 0.1
+
+	}
+	rzi_empowering_the_rozwi = {
+		infantry_power = 0.1
+	}
+	rzi_hierarchical_tax_organization = {
+		global_tax_modifier = 0.2
+		production_efficiency = 0.1
+	}
+	rzi_discipline_and_traning = {
+		discipline = 0.05
+	}
+	rzi_mwari_cult = {
+		global_unrest = -2
+	}
+	rzi_vashambadzi = {
+		trade_efficiency = 0.1
+	}
+}
