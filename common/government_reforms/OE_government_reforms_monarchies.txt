@@ -33,6 +33,7 @@ nubian_matrilinear_monarchy_reform = {
 		factor = 0
 	}
 }
+<<<<<<< Updated upstream
 brythonic_monarchy_reform = {
 	icon = "brythonic_banner"
 	allow_normal_conversion = yes
@@ -68,5 +69,46 @@ brythonic_monarchy_reform = {
 	}
 	ai = {
 		factor = 1
+=======
+
+andalusian_spanish_mechanic = {
+	icon = "noble_muslim"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = andalusian_spanish_mechanic
+			have_had_reform = andalusian_spanish_mechanic
+			mission_completed = spa_gov_caliphate
+			AND = {
+				has_reform = andalusian_spanish_mechanic
+				is_playing_custom_nation = yes
+			}
+		}
+	}
+	trigger = {
+		religion_group = muslim
+		primary_culture = andalucian
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+	nation_designer_trigger = {
+		religion_group = muslim
+		primary_culture = andalucian
+	}
+	government_abilities = {
+		system_of_councils_mechanic
+	}
+	modifiers = {
+		idea_cost = -0.1
+		tolerance_of_heathens_capacity = 4
+		tolerance_heathen = 3
+		cb_on_religious_enemies = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		custom_attributes = {
+			allow_piety_switch_decision = yes
+		}
+>>>>>>> Stashed changes
 	}
 }
