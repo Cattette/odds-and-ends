@@ -3,6 +3,7 @@ monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
 			reforms = {
+				andalusian_spanish_mechanic_reform
 				nubian_matrilinear_monarchy_reform
 				brythonic_monarchy_reform
 				feudalism_reform
