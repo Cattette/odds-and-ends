@@ -44,12 +44,62 @@ romanian_missions_1 = {
 				name = OE_Counties_United
 				duration = 3650
 			}
-			hidden_effect = {
-				moldavia_area = {
-					years_of_nationalism = -10
+			transylvania_area = {
+				add_permanent_claim = ROOT
+			}
+			southern_transylvania_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	OE_transyvania = {
+		icon = mission_placeholder
+		required_missions = {}
+		position = 3
+
+		trigger = {
+			OR = {
+				AND = {
+					alliance_with = HUN
+					HUN = {
+						has_opinion = {
+							who = ROOT
+							value = 190
+						}
+					}
+					treasury = 250
 				}
-				wallachia_area = {
-					years_of_nationalism = -10
+				AND = {
+					transylvania_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT 
+					}
+					southern_transylvania_area = {
+						type = all
+						country_or_non_sovereign_subject_holds = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = transylvania_tt
+			hidden_effect = {
+				if = {
+					limit = { 
+						alliance_with = HUN
+					}
+					country_event = {
+						id = OE_Romania.4
+						days = 0
+					}
+				}
+				else = {
+					158 = {
+						add_core = ROOT
+						add_base_tax = 3
+						add_base_production = 3
+						add_base_manpower = 3
+					}
 				}
 			}
 		}
@@ -87,13 +137,11 @@ romanian_missions_2 = {
 				OR = {
 					AND = { 
 						alliance_with = HUN 
-						NOT = { alliance_with = POL
-						}
+						NOT = { alliance_with = POL}
 					}
 					AND = { 
 						alliance_with = POL 
-						NOT = { alliance_with = HUN
-						}
+						NOT = { alliance_with = HUN}
 					}
 					
 				}
@@ -119,6 +167,118 @@ romanian_missions_2 = {
 				set_country_flag = hab_black_army_unlocked
 			}
 			custom_tooltip = rom_strong_ally_tooltip
+		}
+	}
+
+	OE_romania_restarting_crusade = {
+		icon = mission_placeholder
+		position = 2
+		required_missions = {OE_Romania_Strong_Ally}
+		trigger = {
+			AND = {
+				OR = {
+					any_ally = {
+						is_great_power = yes
+					}
+					custom_trigger_tooltip = {
+						tooltip = rom_allies_with_culture_tt
+						calc_true_if = {
+							all_ally = {
+								OR = {
+									culture_group = south_slavic
+									culture_group = carpathian
+									culture_group = west_slavic
+								}
+							}
+							amount = 2
+						}
+					}
+				}
+				has_opinion = {
+					who = PAP
+					value = 100
+				}
+			}
+		}
+		effect = {
+			create_general = {
+				tradition = 50
+				add_manuever = 2
+				add_siege = 2
+			}
+			add_country_modifier = {
+				name = OE_romania_crusader_zeal
+				duration = 5475
+			}
+			silistria_area = {
+				add_permanent_claim = ROOT
+			}
+			bulgaria_area = {
+				add_permanent_claim = ROOT
+			}
+			thrace_area = {
+				add_permanent_claim = ROOT
+			}
+			macedonia_area = {
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	OE_romania_restore_bulgaria = {
+		icon = mission_placeholder
+		position = 3
+		required_missions = {}
+
+		trigger = {
+			AND = {
+				silistria_area = {
+					type = all
+					NOT = {
+						owned_by = TUR
+					}
+				}
+				bulgaria_area = {
+					type = all
+					NOT = {
+						owned_by = TUR
+					}
+				}
+				thrace_area = {
+					type = all
+					NOT = {
+						owned_by = TUR
+					}
+				}
+				macedonia_area = {
+					type = all
+					NOT = {
+						owned_by = TUR
+					}
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+			custom_tooltip = gain_bulgarian_culture_tt
+			hidden_effect = {
+				if = {
+					limit = {accepted_culture = bulgarian}
+					add_dip_power = 100
+				}
+				else = {
+					add_accepted_culture = bulgarian
+				}
+			}
+			aegean_archipelago_area = {
+				add_permanent_claim = ROOT
+			}
+			morea_area = {
+				add_permanent_claim = ROOT
+			}
+			northern_greece_area = {
+				add_permanent_claim = ROOT
+			}
 		}
 	}
 }
@@ -171,8 +331,14 @@ romanian_missions_3 = {
 			AND = {
 				crown_land_share = 30
 				num_of_estate_agendas_completed = {
-					estate = estate_nobility
+					estate = estate_nobles
 					value = 3
+				}
+				NOT = {
+					estate_influence = {
+						estate = estate_nobles
+						influence = 50
+					}
 				}
 			}
 		}
@@ -182,6 +348,51 @@ romanian_missions_3 = {
 				name = OE_romania_boyar_under_control
 				duration = 7300
 			}
+		}
+	}
+
+	OE_support_of_estates = {
+		icon = mission_placeholder
+		position = 3
+		required_missions = {
+			OE_control_boyar
+		}
+
+		trigger = {
+			AND = {
+				OR = {
+					num_of_estate_agendas_completed = {
+						estate = estate_church
+						value = 1
+					}
+					num_of_estate_agendas_completed = {
+						estate = estate_burghers
+						value = 1
+					}
+				}
+				AND = {
+					estate_loyalty = {
+						estate = estate_nobles
+						loyalty = 50
+					}
+					estate_loyalty = {
+						estate = estate_church
+						loyalty = 50
+					}
+					estate_loyalty = {
+						estate = estate_burghers
+						loyalty = 50
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = OE_romania_support_of_estates
+				duration = 5475
+			}
+			change_government_reform_progress = 75
+			add_legitimacy = 25
 		}
 	}
 }
@@ -236,7 +447,7 @@ romanian_missions_4 = {
 		effect = {
 			add_country_modifier = {
 				name = OE_balkan_orthodoxy
-				duration = 5478
+				duration = 5475
 			}
 			add_dip_power = 50
 		}
@@ -271,7 +482,7 @@ romanian_missions_5 = {
 		effect = {
 			add_country_modifier = {
 				name = OE_romania_restore_market
-				duration = 9131
+				duration = 9125
 			}
 			capital_scope = {
 				province_trade_power_modifier = 0.1
@@ -360,11 +571,14 @@ romanian_missions_5 = {
 				who = TUR
 				max_years_since = 10
 			}
-			TUR = {
-				NOT = {
-					num_of_owned_provinces_with = {
-						value = 7
-						region = balkan_region
+			custom_trigger_tooltip = {
+				tooltip = break_ottoman_tribute_tt
+				TUR = {
+					NOT = {
+						num_of_owned_provinces_with = {
+							value = 7
+							region = balkan_region
+						}
 					}
 				}
 			}
@@ -389,6 +603,62 @@ romanian_missions_5 = {
 					name = OE_romania_break_tribute
 					duration = 7300
 				}
+			}
+		}
+	}
+}
+
+wallachia_heir = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = WAL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	OE_the_shadow_of_dracul = {
+		icon = mission_placeholder
+		position = 4
+
+		trigger = {
+			dynasty = Draculesti
+			army_tradition = 50
+			legitimacy = 90
+		}
+		effect = {
+			add_country_modifier = {
+				name = OE_romania_shadow_of_dracul
+				duration = -1
+			}
+		}
+	}
+}
+
+moldova_heir = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential= {
+		tag = MOL
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	OE_legacy_of_stephen = {
+		icon = mission_placeholder
+		position = 4
+
+		trigger = {
+			dynasty = Musat
+			grown_by_development = 50
+			prestige = 90
+		}
+		effect = {
+			add_country_modifier = {
+				name = OE_romania_lagcy_of_stephan
+				duration = -1
 			}
 		}
 	}

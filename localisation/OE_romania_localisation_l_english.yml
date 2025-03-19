@@ -7,6 +7,9 @@
  OE_Romania.3.d:0 "The envoys of the Ottoman Sultan arrive at our court, their message clear and uncompromising. As a protector of our lands, the Sultan demands the renewal of our tribute, a price for the continued 'privilege' of self-rule. To refuse would be to risk his wrath, yet to submit is to acknowledge our subservience."
  OE_Romania.3.a:0 "Send him gold, to fill his treasury."
  OE_Romania.3.b:0 "Send him men, to fight in his wars."
+ OE_Romania.4.t:0 "The Issue of Transylvania"
+ OE_Romania.4.d:0 "After years of shifting allegiances and growing autonomy, the Hungarian Crown has decided to relinquish control over Transylvania. Whether due to internal struggles, external pressure, or our own diplomatic maneuvering, the lands east of the Carpathians now fall under our rule."
+ OE_Romania.4.a:0 "Transylvania belongs to us now!"
 
  #modifiers
  OE_has_payed_ottoman_tribute:0 "Payed tribute to the Sultan"
@@ -17,6 +20,10 @@
  OE_romania_boyar_under_control:0 "Control Over Boyar's Ambitions"
  OE_romania_restore_market:0 "Markets Restored"
  OE_romania_break_tribute:0 "Freed From The Sultan's Yoke"
+ OE_romania_support_of_estates:0 "Support Of The Estates"
+ OE_romania_crusader_zeal:0 "Crusader Zeal"
+ OE_romania_shadow_of_dracul:0 "The Shadow Of Dracul"
+ OE_romania_lagcy_of_stephan:0 "The Legacy Of Stephan"
  
 #missions
  OE_Romania_Strong_Ally_title:0 "A Strong Ally"
@@ -28,7 +35,19 @@
  OE_control_boyar_title:0 "Curb Boyar's Ambitions"
  OE_restore_markets_title:0 "Restore The Markets"
  OE_danube_trade_title:0 "Danubian Trade"
+ OE_break_ottoman_tribute_title:0 "The Sultan's Yoke"
+ OE_support_of_estates_title:0 "Support Of The Estates"
+ OE_romania_restarting_crusade_title:0 "Restarting The Crusade"
+ OE_romania_restore_bulgaria_title:0 "Restore Bulgaria"
+ OE_the_shadow_of_dracul_title:0 "Shadow Of Dracul"
+ OE_legacy_of_stephen_title:0 "Legacy Of Stephan"
+ OE_transyvania_title:0 "Acquiring Transylvania"
 
 #tooltips
  rom_strong_ally_tooltip:0 "If we complete this mission by allying §THungary§! we will get access to the §JBlack Army§! mercenay company.\n\nIf we complete this mission by allying §TPoland§! we will get access to §Jspecial§! mercenary unit composed of §JHussars§!."
  ROM_DAN_TRADE:0 "Danubian Trade"
+ break_ottoman_tribute_tt:0 "§YOttomans:§!\n          Less than §Y7§! provinces in Balkans."
+ rom_allies_with_culture_tt:0 "At least §Y2§! allies in the §YWest Slavic§!, §YSouth Slavic§! or §YCarpathian§! culture groups."
+ gain_bulgarian_culture_tt:0 "Gain §YBulgarian§! as an accepted culture.\n  If §YBulgarian§! is already an accepted culture gain £dip£§G100§! diplomatic points instead."
+ transylvania_tt:0 "If we complete this mission via §TAlliance§!:\n     The event "§GThe Issue Of Transylvania"§! will happen.\nIf we complete this mission via §TConquest§!:\n      Gain §G3§! Base Tax in §Y[158.GetName]§!.\n      Gain §G3§! Base Production in §Y[158.GetName]§!.\n      Gain §G3§! Base Manpower in §Y[158.GetName]§!.\n      Gain §G3§! Base Tax in §Y[4128.GetName]§!.\n      Gain §G3§! Base Production in §Y[4128.GetName]§!.\n      Gain §G3§! Base Manpower in §Y[4128.GetName]§!."
+ 

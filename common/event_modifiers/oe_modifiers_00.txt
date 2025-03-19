@@ -53,3 +53,24 @@ OE_romania_break_tribute = {
 	global_tax_modifier = 0.05
 	prestige = 1.5
 }
+OE_romania_support_of_estates = {
+	stability_cost_modifier = -0.20
+	core_creation = -0.05
+	all_estate_influence_modifier = -0.10
+}
+OE_romania_crusader_zeal = {
+	discipline = 0.025
+	tolerance_own = 1
+}
+OE_romania_shadow_of_dracul = {
+	army_tradition_decay = -0.01
+	war_exhaustion = -0.10
+	land_morale = 0.05
+	legitimacy = 1
+}
+OE_romania_lagcy_of_stephan = {
+	fort_maintenance_modifier = -0.15
+	infantry_power = 0.05
+	land_morale = 0.05
+	legitimacy = 1
+}

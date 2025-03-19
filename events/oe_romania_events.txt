@@ -98,3 +98,30 @@ country_event = {
 		add_yearly_manpower = -0.4
 	}
 }
+country_event = {
+	id = OE_Romania.4
+	title = OE_Romania.4.t
+	desc = OE_Romania.4.d
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = OE_Romania.4.a
+		158 = {
+			remove_core = HUN
+			add_core = ROOT
+		}
+		4128 = {
+			remove_core = HUN
+			add_core = ROOT
+		}
+		158 = {
+			cede_province = ROOT
+		}
+		4128 = {
+			cede_province = ROOT
+		}
+		add_treasury = -250
+	}
+}
