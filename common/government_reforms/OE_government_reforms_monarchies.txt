@@ -33,7 +33,6 @@ nubian_matrilinear_monarchy_reform = {
 		factor = 0
 	}
 }
-<<<<<<< Updated upstream
 brythonic_monarchy_reform = {
 	icon = "brythonic_banner"
 	allow_normal_conversion = yes
@@ -69,7 +68,8 @@ brythonic_monarchy_reform = {
 	}
 	ai = {
 		factor = 1
-=======
+	}
+}
 
 andalusian_spanish_mechanic = {
 	icon = "noble_muslim"
@@ -109,6 +109,51 @@ andalusian_spanish_mechanic = {
 		custom_attributes = {
 			allow_piety_switch_decision = yes
 		}
->>>>>>> Stashed changes
+	}
+}
+
+Zimbabwe_Throne_of_Stone = {
+	icon = "Domination"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = Zimbabwe_Throne_of_Stone
+			have_had_reform = Zimbabwe_Throne_of_Stone
+			mission_completed = zim_restore_old_empire
+		}
+	}
+	trigger = {
+		religion = shamanism
+		culture_group = southern_african
+	}
+	modifiers = {
+		great_project_upgrade_cost = -0.1
+		harsh_treatment_cost = -0.15
+		tolerance_own = 1
+	}
+}
+
+Zimbabwe_Throne_of_Gold = {
+	icon = "Domination"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = Zimbabwe_Throne_of_Gold
+			have_had_reform = Zimbabwe_Throne_of_Gold
+			mission_completed = zim_modernize_state
+		}
+	}
+	trigger = {
+		religion = shamanism
+		culture_group = southern_african
+	}
+	government_abilities = {
+		feudal_theocracy_mechanic
+	}
+
+	modifiers = {
+		great_project_upgrade_cost = -0.15
+		harsh_treatment_cost = -0.15
+		tolerance_own = 2
 	}
 }

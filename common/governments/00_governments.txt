@@ -3,6 +3,8 @@ monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
 			reforms = {
+				Zimbabwe_Throne_of_Gold
+				Zimbabwe_Throne_of_Stone
 				andalusian_spanish_mechanic_reform
 				nubian_matrilinear_monarchy_reform
 				brythonic_monarchy_reform
@@ -1066,6 +1068,9 @@ tribal = {
 				#1.36
 				#Turkomen
 				turkoman_ottoman_institutions
+				#OE Things
+				Zimbabwe_Throne_of_Stone
+				Zimbabwe_Throne_of_Gold
 			}
 		}
 		tribal_cultural_values = {
@@ -1266,6 +1271,9 @@ theocracy = {
 				egyptian_government_reform
 				blood_theocracy_reform
 				turkoman_ottoman_institutions
+				#OE additions
+				Zimbabwe_Throne_of_Stone
+				Zimbabwe_Throne_of_Gold
 			}
 		}
 		internal_vs_external_mission = {
