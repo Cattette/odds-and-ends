@@ -11,9 +11,10 @@ oe_greece_missions_1 = {
 	}
 	has_country_shield = yes
 	
-	oe_greece_unification = {
-		icon = mission_invade_island
-		position = 1
+	oe_greece_drive_out_the_turks = {
+		icon = mission_dominate_home_trade_node
+		required_missions = { oe_greece_build_army }
+		position = 2
 		provinces_to_highlight = {
 			OR = {
 				area = morea_area
@@ -25,6 +26,323 @@ oe_greece_missions_1 = {
 			}
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
+
+		trigger = {
+			is_free_or_tributary_trigger = yes
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			}
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			give_claims = { area = aydin_area }
+			give_claims = { area = hudavendigar_area }
+		}
+	}
+
+	oe_greece_across_hellas_pont = {
+		icon = mission_invade_island
+		required_missions = { oe_greece_drive_out_the_turks }
+		position = 3
+		provinces_to_highlight = {
+			OR = {
+				area = aydin_area
+				area = hudavendigar_area
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+
+		trigger = { 
+			aydin_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+			} 
+			hudavendigar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = oe_greece_colonize_anatolia
+				duration = 3650
+			}
+			give_claims = { region = anatolia_region }
+		}
+	}
+
+	oe_greece_alexander_wishes = {
+		icon = mission_non-western_soldiers
+		required_missions = { oe_greece_across_hellas_pont }
+		position = 4
+		provinces_to_highlight = {
+			AND = {
+				owner = TUR
+				region = anatolia_region
+			}
+		}
+		
+		trigger = {
+			NOT = {
+				TUR = {
+					num_of_owned_provinces_with = {
+						value = 1
+						region = anatolia_region
+					}
+				}
+			}
+			army_professionalism = 0.25
+		}
+
+		effect = {
+			add_government_reform = greek_companions_system
+			add_country_modifier = {
+				name = oe_greece_colonize_anatolia
+				duration = -1
+			}
+		}
+	}
+}
+oe_greece_missions_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Winds of Change"
+	}
+	potential = {
+		tag = GRE 
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes 
+
+	oe_greece_build_army = {
+		icon = mission_assemble_an_army
+		position = 1
+		required_missions = {  }
+		
+		trigger = {
+			army_size_percentage = 1
+			num_of_generals = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = oe_greece_fight_the_turks
+				duration = 3650
+			}
+			
+			give_claims = { region = balkan_region }
+	}
+}
+	
+	oe_greece_balkans_conquest = {
+		icon = mission_non-western_soldiers
+		position = 2
+		required_missions = { oe_greece_build_army }
+		provinces_to_highlight = {
+			owner = { 
+				NOT = ROOT
+				NOT = { 
+					AND = {
+					alliance_with = ROOT
+					religion = orthodox
+				}
+			 }
+			}
+			region = balkan_region
+		}
+
+		trigger = {
+			calc_true_if = {
+				all_province = {
+					region = balkan_region
+					owner = {
+						religion = orthodox
+						OR = {
+							tag = ROOT
+							alliance_with = ROOT
+							is_subject_of = ROOT
+						}
+					}
+				}
+				amount = 57
+			}
+			}
+
+			effect = {
+			add_country_modifier = {
+				name = oe_greece_balkans_integration
+				duration = 3650
+			}
+		}
+	}
+
+	oe_greece_map_balkans = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { oe_greece_balkans_conquest }
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_production_building_trigger = yes
+				region = balkan_region
+			}
+		}
+
+		effect = {
+			if = {
+				limit = {
+					has_estate = estate_burghers
+				}
+				unlock_estate_privilege = {
+					estate_privilege = estate_burghers_mountain_expansion
+				}
+				add_estate_loyalty = {
+					estate = estate_burghers
+					loyalty = 15
+				}
+			}
+			else = {
+				add_dip_power = 100
+				hidden_effect = {
+					unlock_estate_privilege = {
+						estate_privilege = estate_burghers_mountain_expansion
+					}
+				}
+			}
+		}
+	}
+
+}
+oe_greece_missions_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Winds of Change"
+	}
+	potential = {
+		tag = GRE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	oe_greece_dev_greece = {
+		position = 2
+		icon = mission_pol_breadbasket_europe
+		required_missions = { oe_unify_greece }
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				development = 15
+				region = balkan_region
+				value = 10
+			}
+		}
+
+		effect = {
+			146 = {
+				add_building = university
+			}
+			151 = {
+				add_building = university
+			}
+		}
+
+	}
+
+	oe_greece_age_of_gold = {
+		position = 4
+		icon = mission_african_gold
+		required_missions = { oe_greece_build_buildings }
+
+		provinces_to_highlight = {
+			owned_by = ROOT 
+			OR = {	
+				devastation = 1 
+				unrest = 1 
+				NOT = { development = 10 }
+			}
+		}
+		trigger = { 
+			AND = {
+				all_owned_province = {
+					development = 10 
+					NOT = { unrest = 1 }
+					NOT = { devastation = 1 }
+				}
+				num_of_owned_provinces_with = {
+					value = 20
+					development = 20
+
+				}
+			}
+			}
+
+		effect = {
+			if = { 
+				limit = { has_dlc = "Mandate of Heaven" }
+				custom_tooltip = pol_if_used_ge_rest_else_30_years_extension_tt 
+				if = {
+					limit = { has_had_golden_age = yes } 
+					reset_golden_age = yes 
+				}
+				else_if = {
+					limit = { in_golden_age = yes } 
+					extend_golden_age = 600
+				}
+			}
+			else = {
+				add_country_modifier = {
+					name = pol_golden_era_modifier
+					duration = 10950 
+				}
+			}
+		}
+	}
+
+
+}
+oe_greece_missions_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Winds of Change"
+	}
+	potential = {
+		tag = GRE
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	oe_unify_greece = {
+		position = 1
+		icon = mission_landsknecht_soldier
+		required_missions = {  }
 		
 		trigger = {
 			is_free_or_tributary_trigger = yes
@@ -53,93 +371,58 @@ oe_greece_missions_1 = {
 				country_or_non_sovereign_subject_holds = ROOT
 			}
 		}
+
 		effect = {
-			give_claims = { area = aydin_area }
-			give_claims = { area = hudavendigar_area }
+			add_years_of_income = 1
+			add_war_exhaustion = -2
 		}
 	}
 
-}
-oe_greece_missions_2 = {
-	slot = 2
-	generic = no
-	ai = yes
-	potential_on_load = {
-		has_dlc = "Winds of Change"
-	}
-	potential = {
-		tag = GRE 
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes 
-
-	oe_greece_navy_build = {
-		icon = mission_invade_island
-		position = 1
-		provinces_to_highlight = {
-			has_port = yes
-			owned_by = root
-		}
+	oe_greece_government = {
+		position = 2
+		icon = mission_early_modern_university
+		required_missions = { oe_unify_greece }
 
 		trigger = {
-			navy_size_percentage = .95
+			OR = {
+				full_idea_group = administrative_ideas
+				monthly_adm = 10
+			}
+			is_at_war = no
 		}
 
 		effect = {
-			add_country_modifier = {
-				name = oe_greece_finest_navy_ever
-				duration = 3650
-			}
+			change_government = republic
+			add_government_reform = greek_demokritas
+			add_government_reform = 100
 		}
 	}
-	
-	
-	oe_greece_navy_build = {
-		icon = mission_invade_island
-		position = 1
-		provinces_to_highlight = {
-			has_port = yes
-			owned_by = ROOT
-		}
+
+	oe_greece_restore_monuments = {
+		position = 3
+		icon = mission_parthenon
+		required_missions = { oe_greece_government }
 
 		trigger = {
-			navy_size_percentage = 0.95
-		}
-
-		effect = {
-			add_country_modifier = {
-				name = oe_greece_finest_navy_ever
-				duration = 3650
+			has_great_project = {
+				type = parthenon
+				tier = 2
+			}
+			has_great_project = {
+				type = mausoleum_at_halicarnassus
+				tier = 2
+			}
+			has_great_project = {
+				type = hagia_sophia
+				tier = 2
 			}
 		}
+		
+		effect = {
+			add_prestige_or_monarch_power = { amount = 30 }
+			set_country_flag = repaired_greek_monuments
+		}
 	}
-
-}
-oe_greece_missions_3 = {
-	slot = 3
-	generic = no
-	ai = yes
-	potential_on_load = {
-		has_dlc = "Winds of Change"
-	}
-	potential = {
-		tag = GRE
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
-}
-oe_greece_missions_4 = {
-	slot = 4
-	generic = no
-	ai = yes
-	potential_on_load = {
-		has_dlc = "Winds of Change"
-	}
-	potential = {
-		tag = GRE
-		NOT = { map_setup = map_setup_random }
-	}
-	has_country_shield = yes
 }
 oe_greece_missions_5 = {
 	slot = 5
@@ -153,4 +436,100 @@ oe_greece_missions_5 = {
 		NOT = { map_setup = map_setup_random }
 	}
 	has_country_shield = yes
+
+
+	oe_greece_prosperity = {
+		position = 2
+		icon = mission_peasantry
+		required_missions = { oe_unify_greece }
+
+		trigger = {
+			morea_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+				is_prosperous = yes
+			}
+			northern_greece_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+				is_prosperous = yes
+			}
+			macedonia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+				is_prosperous = yes
+			}
+			aegean_archipelago_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT 
+				is_prosperous = yes
+			}
+			albania_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_prosperous = yes
+			}
+			thrace_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				is_prosperous = yes
+			}
+		}
+
+		effect = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						area = morea_area
+						area = northern_greece_area
+						area = macedonia_area
+						area = aegean_archipelago_area
+						area = albania_area
+						area = thrace_area
+					}
+				}
+				add_province_modifier = {
+					name = liv_lva_expanded_land
+					duration = 3650
+				}
+			}
+		}
+	}
+
+	oe_greece_build_buildings = {
+		position = 3
+		icon = mission_early_game_buildings
+		required_missions = { oe_greece_prosperity }
+
+
+		trigger = {
+			num_of_owned_provinces_with = {
+				limit = {
+					OR = {
+						area = morea_area
+						area = northern_greece_area
+						area = macedonia_area
+						area = aegean_archipelago_area
+						area = albania_area
+						area = thrace_area
+					}
+				}
+				value = 10
+				AND = {
+					has_manufactory_trigger = yes
+					has_manpower_building_trigger = yes
+					has_production_building_trigger = yes
+				}
+			}
+		}
+
+		effect = {
+			add_country_modifier = {
+				name = oe_greece_prosperous_heartland
+				duration = 3650
+			}
+		}
+	}
+
+	
 }

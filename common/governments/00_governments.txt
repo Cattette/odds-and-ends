@@ -3,6 +3,7 @@ monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
 			reforms = {
+				greek_kingdom
 				Zimbabwe_Throne_of_Gold
 				Zimbabwe_Throne_of_Stone
 				andalusian_spanish_mechanic_reform
@@ -339,6 +340,8 @@ monarchy = {
 				#1.37 Bohemia
 				vozove_hradby_reform
 				russian_mercenary_guard_reform 
+				#OE Reforms
+				greek_companions_system
 			}
 		}
 		deliberative_assembly = {
@@ -625,6 +628,7 @@ republic = {
 	reform_levels = {
 		oligarchy_merchant_class_noble_elite = {
 			reforms = {
+				greek_demokritas
 				oligarchy_reform
 				signoria_reform
 				merchants_reform
@@ -843,6 +847,8 @@ republic = {
 				#1.37 Bohemia
 				vozove_hradby_reform
 				russian_mercenary_guard_reform 
+				#OE Reforms
+				greek_companions_system
 			}
 		}
 		parliamentary_vs_presidential = {
@@ -1150,6 +1156,8 @@ tribal = {
 				#1.37 Bohemia
 				vozove_hradby_reform
 				russian_mercenary_guard_reform 
+				#OE Reforms
+				greek_companions_system
 			}
 		}
 		tribal_modernization = {
@@ -1419,6 +1427,8 @@ theocracy = {
 				#1.37 Bohemia
 				vozove_hradby_reform
 				russian_mercenary_guard_reform 
+				#OE Reforms
+				greek_companions_system
 			}
 		}
 		secularization = {

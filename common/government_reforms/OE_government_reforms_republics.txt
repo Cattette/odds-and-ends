@@ -1,0 +1,87 @@
+greek_demokritas = {
+	icon = "parliament"
+	valid_for_nation_designer = no
+	allow_normal_conversion = no
+	potential = {
+		has_dlc = "Domination"
+		NOT = { has_reform = crown_colony_government }
+		NOT = { has_reform = private_enterprise_colony_government }
+		NOT = { has_reform = self_governing_colony_government }
+	}
+	modifiers = {
+		candidate_random_bonus = 4
+		all_estate_influence_modifier = -0.05
+		max_terms = 3
+	}
+	trigger = {
+		custom_trigger_tooltip = {
+			tooltip = "NEEDS_REGULAR_ELECTIONS"
+			has_government_attribute = has_term_election
+		}
+	}
+
+	conditional = {
+		allow = { has_dlc = "Domination" }
+		custom_attributes = {
+			enables_plutocratic_idea_group = yes
+			enables_aristocratic_idea_group = no
+			has_limited_terms = yes
+			has_candidate_bonus = yes
+		}
+	}
+
+	conditional = {
+		allow = { NOT = { has_dlc = "Domination" } }
+		custom_attributes = {
+			enables_plutocratic_idea_group = yes
+			enables_aristocratic_idea_group = no
+		}
+	}
+	effect = {
+		hidden_effect = {
+			set_variable = {
+				which = election_term
+				value = 1
+			}
+		}
+	}
+	removed_effect = {
+		hidden_effect = {
+			set_variable = {
+				which = election_term
+				value = 1
+			}
+		}
+		clr_ruler_focus_modifiers = yes
+	}
+	post_removed_effect = {
+		clr_ruler_focus_modifiers = yes
+	}
+	duration = 5
+}
+
+greek_companions_system = {
+	icon = "line_infantry"
+	allow_normal_conversion = yes
+	trigger = {
+		if = {
+			limit = { has_modifier_locking_military_tier = yes }
+			OR = {
+				has_reform = sustained_discipline_reform
+				has_not_modifier_locking_military_tier = yes
+			}
+		}
+	}
+	modifiers = {
+		shock_damage_received = -0.05
+		fire_damage_received = -0.05
+		morale_damage_received = -0.05
+		land_attrition = -0.15
+		drill_decay_modifier = -0.33
+		drill_gain_modifier = 0.33
+	}
+	
+	ai = {
+		factor = 1
+	}
+}

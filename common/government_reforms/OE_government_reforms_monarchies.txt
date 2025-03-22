@@ -110,6 +110,7 @@ andalusian_spanish_mechanic = {
 			allow_piety_switch_decision = yes
 		}
 	}
+	fixed_rank = 3
 }
 
 Zimbabwe_Throne_of_Stone = {

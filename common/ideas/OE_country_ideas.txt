@@ -205,7 +205,7 @@ RZI_ideas = {
 		infantry_power = 0.1
 	}
 	rzi_hierarchical_tax_organization = {
-		global_tax_modifier = 0.2
+		global_tax_modifier = 0.1
 		production_efficiency = 0.1
 	}
 	rzi_discipline_and_traning = {
@@ -215,6 +215,6 @@ RZI_ideas = {
 		global_unrest = -2
 	}
 	rzi_vashambadzi = {
-		trade_efficiency = 0.1
+		trade_efficiency = 0.15
 	}
 }
