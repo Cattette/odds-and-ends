@@ -99,9 +99,13 @@ oe_greece_missions_1 = {
 		position = 4
 		provinces_to_highlight = {
 			AND = {
-				owner = TUR
 				region = anatolia_region
+				owned_by = TUR
 			}
+			#AND = {
+			#	owner = TUR
+			#	region = anatolia_region
+			#}
 		}
 		
 		trigger = {
@@ -162,8 +166,8 @@ oe_greece_missions_2 = {
 		position = 2
 		required_missions = { oe_greece_build_army }
 		provinces_to_highlight = {
+			NOT = { owned_by  = ROOT }
 			owner = { 
-				NOT = ROOT
 				NOT = { 
 					AND = {
 					alliance_with = ROOT
@@ -275,9 +279,11 @@ oe_greece_missions_3 = {
 	}
 
 	oe_greece_age_of_gold = {
-		position = 4
+		position = 5
 		icon = mission_african_gold
-		required_missions = { oe_greece_build_buildings }
+		required_missions = { oe_greece_build_buildings 
+							  oe_greece_alexander_wishes
+							  oe_greece_restore_monuments }
 
 		provinces_to_highlight = {
 			owned_by = ROOT 
@@ -394,7 +400,7 @@ oe_greece_missions_4 = {
 		effect = {
 			change_government = republic
 			add_government_reform = greek_demokritas
-			add_government_reform = 100
+			add_prestige_or_monarch_power = { value = 10 }
 		}
 	}
 
@@ -404,19 +410,51 @@ oe_greece_missions_4 = {
 		required_missions = { oe_greece_government }
 
 		trigger = {
-			has_great_project = {
-				type = parthenon
-				tier = 2
+			146 = { 
+				OR = {
+					has_great_project = {
+						type = parthenon
+						tier = 2
+					}
+					has_great_project = {
+						type = parthenon
+						tier = 3
+					}
+				}
 			}
-			has_great_project = {
-				type = mausoleum_at_halicarnassus
-				tier = 2
+			319 = {
+				OR = {
+					has_great_project = {
+						type = mausoleum_at_halicarnassus
+						tier = 2
+					}
+					has_great_project = {
+						type = mausoleum_at_halicarnassus
+						tier = 3
+					}
+				}
 			}
-			has_great_project = {
-				type = hagia_sophia
-				tier = 2
+			151 = {
+				OR = {
+					has_great_project = {
+						type = hagia_sophia
+						tier = 2
+					}
+					has_great_project = {
+						type = hagia_sophia
+						tier = 3
+					}
+				}
 			}
 		}
+			#has_great_project = {
+			#	type = mausoleum_at_halicarnassus
+			#	tier = 2
+			#}
+			#has_great_project = {
+			#	type = hagia_sophia
+			#	tier = 2
+			#}
 		
 		effect = {
 			add_prestige_or_monarch_power = { amount = 30 }
@@ -504,16 +542,14 @@ oe_greece_missions_5 = {
 
 		trigger = {
 			num_of_owned_provinces_with = {
-				limit = {
-					OR = {
-						area = morea_area
-						area = northern_greece_area
-						area = macedonia_area
-						area = aegean_archipelago_area
-						area = albania_area
-						area = thrace_area
+				OR = {
+					area = morea_area
+					area = northern_greece_area
+					area = macedonia_area
+					area = aegean_archipelago_area
+					area = albania_area
+					area = thrace_area
 					}
-				}
 				value = 10
 				AND = {
 					has_manufactory_trigger = yes

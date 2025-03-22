@@ -133,7 +133,7 @@ romanian_missions_2 = {
 
 		trigger = {
 			any_owned_province = {
-				temple = 1
+				has_tax_building_trigger = yes
 				base_tax = 7
 			}
 		}

@@ -71,16 +71,16 @@ brythonic_monarchy_reform = {
 	}
 }
 
-andalusian_spanish_mechanic = {
+andalusian_spanish_mechanic_reform = {
 	icon = "noble_muslim"
 	allow_normal_conversion = yes
 	potential = {
 		OR = {
-			has_reform = andalusian_spanish_mechanic
-			have_had_reform = andalusian_spanish_mechanic
+			has_reform = andalusian_spanish_mechanic_reform
+			have_had_reform = andalusian_spanish_mechanic_reform
 			mission_completed = spa_gov_caliphate
 			AND = {
-				has_reform = andalusian_spanish_mechanic
+				has_reform = andalusian_spanish_mechanic_reform
 				is_playing_custom_nation = yes
 			}
 		}

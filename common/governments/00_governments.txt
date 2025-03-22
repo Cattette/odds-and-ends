@@ -3,7 +3,6 @@ monarchy = {
 	reform_levels = {
 		feudalism_vs_autocracy = {
 			reforms = {
-				greek_kingdom
 				Zimbabwe_Throne_of_Gold
 				Zimbabwe_Throne_of_Stone
 				andalusian_spanish_mechanic_reform
