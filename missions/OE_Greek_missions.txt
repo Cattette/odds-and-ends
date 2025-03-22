@@ -209,10 +209,13 @@ oe_greece_missions_2 = {
 		required_missions = { oe_greece_balkans_conquest }
 
 		trigger = {
-			num_of_owned_provinces_with = {
-				value = 10
-				has_production_building_trigger = yes
-				region = balkan_region
+			AND = {
+				full_idea_group = infrastructure_ideas
+				num_of_owned_provinces_with = {
+					value = 10
+					has_production_building_trigger = yes
+					region = balkan_region
+				}
 			}
 		}
 
@@ -405,7 +408,7 @@ oe_greece_missions_4 = {
 	}
 
 	oe_greece_restore_monuments = {
-		position = 3
+		position = 4
 		icon = mission_parthenon
 		required_missions = { oe_greece_government }
 
@@ -535,10 +538,9 @@ oe_greece_missions_5 = {
 	}
 
 	oe_greece_build_buildings = {
-		position = 3
 		icon = mission_early_game_buildings
 		required_missions = { oe_greece_prosperity }
-
+		position = 4
 
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -566,6 +568,4 @@ oe_greece_missions_5 = {
 			}
 		}
 	}
-
-	
 }

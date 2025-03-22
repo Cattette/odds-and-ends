@@ -9,7 +9,7 @@ greek_demokritas = {
 		NOT = { has_reform = self_governing_colony_government }
 	}
 	modifiers = {
-		candidate_random_bonus = 4
+		candidate_random_bonus = 3
 		all_estate_influence_modifier = -0.05
 		max_terms = 3
 	}
@@ -37,6 +37,17 @@ greek_demokritas = {
 			enables_aristocratic_idea_group = no
 		}
 	}
+
+	conditional = {
+		allow = {
+			OR = {
+				has_dlc = "Common Sense"
+				has_dlc = "Domination"
+			}
+		}
+		has_parliament = yes
+	}
+
 	effect = {
 		hidden_effect = {
 			set_variable = {
