@@ -1,5 +1,53 @@
 ﻿l_english:
- # events
+ OE_restore_dynasty_title:0 "Strength of the Sovereign"
+ OE_restore_dynasty_desc:0 "A strong realm requires a strong ruler, one whose wisdom guides the state, whose authority commands the nobility, and whose vision shapes the destiny of our people. By assembling a court of brilliant advisors and ensuring a steady flow of administrative, diplomatic, and military expertise, we can consolidate our rule. With unquestionable strength, we shall curb the power of the Boyars and raise an army worthy of our ambitions. Let none challenge our authority!"
+
+ OE_control_boyar_title:0 "Curb Boyar's Ambitions"
+ OE_control_boyar_desc:0 "For centuries, the Boyars have held immense power over our land and government, often acting as rulers in their own right. Their influence has constrained our authority, forcing us to negotiate rather than govern. But now, we are turning the tide. By reclaiming royal lands, fulfilling their demands on our terms, and ensuring they do not grow too strong, we have begun the process of breaking their grip. The time has come to remind the nobility that ultimate power rests with the crown."
+
+ OE_support_of_estates_title:0 "Support Of The Estates"
+ OE_support_of_estates_desc:0 "A ruler's strength is not measured by force alone but by their ability to govern wisely and maintain the loyalty of their subjects. Having curbed the unchecked power of the Boyars, we must now turn to the other pillars of our realm—the Clergy, who safeguard the soul of our nation, and the Burghers, whose commerce fuels our prosperity. By ensuring their support and fulfilling their needs, we can consolidate our rule, strengthen our legitimacy, and lay the foundations for a more centralized and effective government."
+
+ OE_romania_build_churches_title:0 "Churches of [Root.GetName]"
+ OE_romania_build_churches_desc:0 "A strong realm is built upon both material wealth and spiritual devotion. By investing in the prosperity of our cities and ensuring that the Church stands at the heart of our society, we reinforce the unity of our people and the legitimacy of our rule. With a flourishing province as proof of our commitment, we will gain the trust of the faithful and the blessings of the Patriarchate, strengthening our moral authority both at home and abroad."
+
+ OE_Balkan_orthodoxy_title:0 "Balkan Orthodoxy"
+ OE_Balkan_orthodoxy_desc:0 "The Orthodox Christian faith binds the peoples of the Balkans together, and with the support of our South Slavic brothers, we can face the challenges posed by both external enemies and internal strife. Strengthening our alliances with Serbia, Bulgaria, or other Orthodox neighbors will provide us with the solidarity needed to protect our lands and ensure the prosperity of our faith. Together, we will stand against common foes and foster unity across the region."
+
+ OE_Romania_Strong_Ally_title:0 "A Strong Ally"
+ OE_Romania_Strong_Ally_desc:0 "The balance of power in Eastern Europe is fragile, and our survival depends on forging strong alliances. Both Hungary and Poland seek influence over our lands, and aligning ourselves with one of these great powers could provide the military and diplomatic support we need. If we pledge our loyalty wisely, we may gain access to elite warriors and enhance our standing on the world stage. But we must choose carefully—our allies today may become our rivals tomorrow."
+
+ OE_romania_restarting_crusade_title:0 "Restarting The Crusade"
+ OE_romania_restarting_crusade_desc:0 "The Ottoman threat looms over the Balkans, and if we do not act, our lands may fall to their relentless expansion. The Holy See calls for resistance, and we have a chance to lead a great Christian alliance against the Turk. By securing the blessing of the Pope and gathering powerful allies, we may forge a coalition strong enough to challenge the Sultan. If we can rally the faithful, we will not only defend our lands but reclaim what has been lost to the Crescent. Deus Vult!"
+
+ OE_romania_restore_bulgaria_title:0 "Restore Bulgaria"
+ OE_romania_restore_bulgaria_desc:0 "For too long, the Bulgarian lands have suffered under Ottoman rule, their people subjugated and their faith oppressed. But now, the tide has turned. With the Turks driven from Bulgaria, we stand as the rightful protectors of these lands. By embracing the Bulgarians as our own, we strengthen our realm and forge a new future for the Balkans. Yet, our mission is not complete—for beyond the Rhodopes and across the Aegean, the shadow of the Sultan still looms. If we are to ensure lasting security, we must press our claims into Greece and continue our righteous struggle."
+
+ OE_Romania_Uniting_The_Counties_title:0 "Uniting The Counties"
+ OE_Romania_Uniting_The_Counties_desc:0 "The lands of Wallachia and Moldova have long been contested by foreign powers, but their fate should be decided by strength, not diplomacy. If we are to stake our claim over these principalities, we must first demonstrate our military might. By mustering an army that rivals our full potential, we shall prove to both our people and our rivals that we are ready to unite the Vlach lands under a single banner. Let every sword be sharpened, every horse saddled—our time for conquest is at hand!"
+
+ OE_Counties_United_title:0 "Romania United"
+ OE_Counties_United_desc:0 "At last, the lands of Wallachia and Moldova stand united under our rule. No longer divided by foreign influence or petty rivalries, we now hold the heartland of the Vlach people. But our task is not yet complete—beyond the Carpathians lies Transylvania, a land rich in resources and home to many of our kin. If we are to truly restore the legacy of Dacia, we must lay claim to these lands and bring them into our fold. The mountains will not stand in our way, nor will those who seek to keep us divided!"
+
+ OE_transyvania_title:0 "Acquiring Transylvania"
+ OE_transyvania_desc:0 "Transylvania has long been contested between our people and the Hungarian Crown. While conquest is always an option, diplomacy may yet yield results. If we can secure a strong alliance and deep trust with Hungary, we might persuade them to cede some of these lands peacefully. However, should they refuse, we must take Transylvania by force and invest in its development to secure our rule. Whether by quill or sword, these lands will be ours."
+
+ OE_restore_markets_title:0 "Restore The Markets"
+ OE_restore_markets_desc:0 "A prosperous realm begins with a thriving capital, where the pulse of trade flows and wealth is generated. By investing in the development of our capital, improving its infrastructure, and ensuring that its marketplaces are bustling with merchants, we lay the foundation for greater economic power. As we elevate our capital's status, the benefits will extend far and wide, enhancing our influence in trade and solidifying our place among the great powers."
+
+ OE_danube_trade_title:0 "Danubian Trade"
+ OE_danube_trade_desc:0 "Our nation's prosperity is built, among many things, on trade, and to ensure our future, we must dominate the flow of goods in our home trade node. By asserting our control over the markets and establishing a thriving center of commerce, we will become the undisputed leaders of trade in the region. With our merchants guiding the flow of wealth, our coffers will swell, and our influence will spread across the known world."
+
+ OE_break_ottoman_tribute_title:0 "The Sultan's Yoke"
+ OE_break_ottoman_tribute_desc:0 "The Ottoman Empire's grip on the Balkans has weakened, and we have seized the opportunity to strike at their heart. With the Ottomans now controlling less than a handful of provinces in the Balkans, it is time for us to secure our rightful place in the region. Having emerged victorious in a recent conflict, we have shown the world that we are no longer subjugated. The days of paying tribute to the Sultan are over, and our future is one of independence and prosperity."
+
+ OE_the_shadow_of_dracul_title:0 "Shadow Of Dracul"
+ OE_the_shadow_of_dracul_desc:0 "The shadow of Vlad Dracul looms large over Wallachia, his legacy of strength and cunning shaping the very identity of our people. But a kingdom built on the foundation of one man's might cannot endure forever without a worthy heir. We must solidify our claim to the throne, not only by blood but by proving ourselves in battle and leadership. By embracing the Drăculești dynasty and displaying the same martial prowess that once struck fear into our enemies, we will earn the title of a true successor to the legendary Dracul, bringing Wallachia to new heights of power and prestige."
+
+ OE_legacy_of_stephen_title:0 "Legacy Of Stefan"
+ OE_legacy_of_stephen_desc:0 "Stefan the Great's reign brought Moldova into the annals of history, a beacon of resistance against foreign invaders and a symbol of strength for the Moldovan people. His name is etched in every stone of our land, but it is time to ensure that his legacy lives on through a worthy successor. To do so, we must solidify our kingdom, expand our borders, and elevate our people. With the Musat dynasty at the helm, it is our task to build upon his triumphs, increasing our power and prestige until we are deserving of being called his rightful heir."
+
+
  OE_Romania.1.t:0 "The Situation in [Root.GetName]"
  OE_Romania.1.d:0 "Both Wallachia and Moldavia find themselves caught between powerful forces, struggling to maintain their autonomy amid growing external pressures. As vassals of the Ottoman Empire, they were bound to pay tribute and offer military support, yet their ties to Hungary and the wider Christian world often pulled them in the opposite direction. Internally, succession disputes and noble conflicts further weaken their stability, leaving them vulnerable to foreign intervention. With war on the horizon and alliances shifting, both principalities face an uncertain future, their survival hinging on their ability to navigate the treacherous diplomacy of the region."
  OE_Romania.1.a:0 "Only time will tell."
@@ -10,8 +58,6 @@
  OE_Romania.4.t:0 "The Issue of Transylvania"
  OE_Romania.4.d:0 "After years of shifting allegiances and growing autonomy, the Hungarian Crown has decided to relinquish control over Transylvania. Whether due to internal struggles, external pressure, or our own diplomatic maneuvering, the lands east of the Carpathians now fall under our rule."
  OE_Romania.4.a:0 "Transylvania belongs to us now!"
-
- #modifiers
  OE_has_payed_ottoman_tribute:0 "Payed tribute to the Sultan"
  OE_balkan_orthodoxy:0 "Balkan Orthodoxy"
  OE_Romania_United:0 "Romania United"
@@ -24,30 +70,9 @@
  OE_romania_crusader_zeal:0 "Crusader Zeal"
  OE_romania_shadow_of_dracul:0 "The Shadow Of Dracul"
  OE_romania_lagcy_of_stephan:0 "The Legacy Of Stephan"
- 
-#missions
- OE_Romania_Strong_Ally_title:0 "A Strong Ally"
- OE_Romania_Uniting_The_Counties_title:0 "Uniting The Counties"
- OE_Counties_United_title:0 "Romania United"
- OE_romania_build_churches_title:0 "Churches of [Root.GetName]"
- OE_Balkan_orthodoxy_title:0 "Balkan Orthodoxy"
- OE_restore_dynasty_title:0 "Restore Our Dynasty"
- OE_control_boyar_title:0 "Curb Boyar's Ambitions"
- OE_restore_markets_title:0 "Restore The Markets"
- OE_danube_trade_title:0 "Danubian Trade"
- OE_break_ottoman_tribute_title:0 "The Sultan's Yoke"
- OE_support_of_estates_title:0 "Support Of The Estates"
- OE_romania_restarting_crusade_title:0 "Restarting The Crusade"
- OE_romania_restore_bulgaria_title:0 "Restore Bulgaria"
- OE_the_shadow_of_dracul_title:0 "Shadow Of Dracul"
- OE_legacy_of_stephen_title:0 "Legacy Of Stephan"
- OE_transyvania_title:0 "Acquiring Transylvania"
-
-#tooltips
  rom_strong_ally_tooltip:0 "If we complete this mission by allying §THungary§! we will get access to the §JBlack Army§! mercenay company.\n\nIf we complete this mission by allying §TPoland§! we will get access to §Jspecial§! mercenary unit composed of §JHussars§!."
  ROM_DAN_TRADE:0 "Danubian Trade"
  break_ottoman_tribute_tt:0 "§YOttomans:§!\n          Less than §Y7§! provinces in Balkans."
  rom_allies_with_culture_tt:0 "At least §Y2§! allies in the §YWest Slavic§!, §YSouth Slavic§! or §YCarpathian§! culture groups."
  gain_bulgarian_culture_tt:0 "Gain §YBulgarian§! as an accepted culture.\n  If §YBulgarian§! is already an accepted culture gain £dip£§G100§! diplomatic points instead."
- transylvania_tt:0 "If we complete this mission via §TAlliance§!:\n     The event "§GThe Issue Of Transylvania"§! will happen.\nIf we complete this mission via §TConquest§!:\n      Gain §G3§! Base Tax in §Y[158.GetName]§!.\n      Gain §G3§! Base Production in §Y[158.GetName]§!.\n      Gain §G3§! Base Manpower in §Y[158.GetName]§!.\n      Gain §G3§! Base Tax in §Y[4128.GetName]§!.\n      Gain §G3§! Base Production in §Y[4128.GetName]§!.\n      Gain §G3§! Base Manpower in §Y[4128.GetName]§!."
- 
+ transylvania_tt:0 "If we complete this mission via §TAlliance§!:\n     The event "§GThe Issue Of Transylvania§!" will happen.\nIf we complete this mission via §TConquest§!:\n      Gain §G3§! Base Tax in §Y[158.GetName]§!.\n      Gain §G3§! Base Production in §Y[158.GetName]§!.\n      Gain §G3§! Base Manpower in §Y[158.GetName]§!.\n      Gain §G3§! Base Tax in §Y[4128.GetName]§!.\n      Gain §G3§! Base Production in §Y[4128.GetName]§!.\n      Gain §G3§! Base Manpower in §Y[4128.GetName]§!."

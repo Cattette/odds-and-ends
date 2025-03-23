@@ -70,3 +70,91 @@ brythonic_monarchy_reform = {
 		factor = 1
 	}
 }
+
+andalusian_spanish_mechanic_reform = {
+	icon = "noble_muslim"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = andalusian_spanish_mechanic_reform
+			have_had_reform = andalusian_spanish_mechanic_reform
+			mission_completed = spa_gov_caliphate
+			AND = {
+				has_reform = andalusian_spanish_mechanic_reform
+				is_playing_custom_nation = yes
+			}
+		}
+	}
+	trigger = {
+		religion_group = muslim
+		primary_culture = andalucian
+	}
+	valid_for_nation_designer = yes
+	nation_designer_cost = 20
+	nation_designer_trigger = {
+		religion_group = muslim
+		primary_culture = andalucian
+	}
+	government_abilities = {
+		system_of_councils_mechanic
+	}
+	modifiers = {
+		idea_cost = -0.1
+		tolerance_of_heathens_capacity = 4
+		tolerance_heathen = 3
+		cb_on_religious_enemies = yes
+	}
+	conditional = {
+		allow = { has_dlc = "Cradle of Civilization" }
+		custom_attributes = {
+			allow_piety_switch_decision = yes
+		}
+	}
+	fixed_rank = 3
+}
+
+Zimbabwe_Throne_of_Stone = {
+	icon = "Domination"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = Zimbabwe_Throne_of_Stone
+			have_had_reform = Zimbabwe_Throne_of_Stone
+			mission_completed = zim_restore_old_empire
+		}
+	}
+	trigger = {
+		religion = shamanism
+		culture_group = southern_african
+	}
+	modifiers = {
+		great_project_upgrade_cost = -0.1
+		harsh_treatment_cost = -0.15
+		tolerance_own = 1
+	}
+}
+
+Zimbabwe_Throne_of_Gold = {
+	icon = "Domination"
+	allow_normal_conversion = yes
+	potential = {
+		OR = {
+			has_reform = Zimbabwe_Throne_of_Gold
+			have_had_reform = Zimbabwe_Throne_of_Gold
+			mission_completed = zim_modernize_state
+		}
+	}
+	trigger = {
+		religion = shamanism
+		culture_group = southern_african
+	}
+	government_abilities = {
+		feudal_theocracy_mechanic
+	}
+
+	modifiers = {
+		great_project_upgrade_cost = -0.15
+		harsh_treatment_cost = -0.15
+		tolerance_own = 2
+	}
+}
