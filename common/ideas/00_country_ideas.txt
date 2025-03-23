@@ -9978,10 +9978,7 @@ RZW_ideas = {
 	}
   
 	trigger = {
-		OR = {
-			tag = RZI
-			tag = RZW
-		}
+		tag = RZW
 	}
 	free = yes
   

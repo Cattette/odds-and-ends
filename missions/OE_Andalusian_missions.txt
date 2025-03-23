@@ -49,27 +49,6 @@ granada_development_missions = {
 			}
 		}
 	}
-
-	spa_gov_caliphate = {
-		icon = mission_develop_cordoba
-		required_missions = { gra_own_iberia }
-		position = 7
-
-		trigger = {
-			has_country_flag = accept_flag
-			num_of_owned_provinces_with = {
-				value = 15
-				religion = catholic
-				has_tax_building_trigger = yes
-			}
-			
-			
-		}
-
-		effect = {
-			
-		}
-	}
 		
 	
 	gra_palace_of_alhambra = {
@@ -163,6 +142,46 @@ andalusia_slot_1_missions = {
 		}
 	}
 	
+	spa_gov_caliphate = {
+		icon = mission_develop_cordoba
+		required_missions = { gra_own_iberia }
+		position = 7
+
+		trigger = {
+			full_idea_group = humanist_ideas
+			num_of_owned_provinces_with = {
+				value = 15
+				religion = catholic
+				has_tax_building_trigger = yes
+			}
+			
+			
+		}
+
+		effect = {
+			add_government_reform = andalusian_spanish_mechanic_reform
+		}
+	}
+
+	adu_OE_western = {
+		icon = mission_assemble_an_army
+		required_missions = { 
+			spa_gov_caliphate
+		  }
+		position = 8
+
+		trigger = {
+			is_great_power = yes
+			army_professionalism = 0.25
+		}
+		
+		effect = {
+			change_unit_type = western
+		}
+
+
+	}
+
 	adu_monopolize_africa = { #art
 		icon = mission_trade_in_gold_coast
 		required_missions = { adu_caribbean_cn }
