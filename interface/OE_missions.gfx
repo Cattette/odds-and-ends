@@ -35,4 +35,8 @@ spriteTypes = {
 		name = "unify_brythonia"
 		texturefile = "gfx/interface/missions/unify_brythonia.dds"
 	}
+	spriteType = {
+		name = "tara_hill"
+		texturefile = "gfx/interface/missions/tara_hill.dds"
+	}
 }

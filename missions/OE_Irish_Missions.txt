@@ -27,29 +27,50 @@ ire_missions_1 = {
 	}
 	has_country_shield = yes
 
-
-	ire_early_irish_industry = {
-		icon = fra_crown_seat_capital
+	ire_raise_banners = {
+		icon = tara_hill
 		position = 1
+		required_missions = {
+		}
 		trigger = {
-			
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 3
+				has_manpower_building_trigger = yes	
+				culture = irish
+			}
+			army_tradition = 15
 		}
 		effect = {
-			
+			create_general = {
+				tradition = 55
+			}
+
+			add_yearly_manpower = 1
 		}
 	}
 
-	ire_raise_banners = {
-		icon = mission_english_civil_war
-		position = 2
+	ire_early_irish_industry = {
+		icon = fra_crown_seat_capital
+		position = 3
 		required_missions = {
-			ire_early_irish_industry
+			ire_raise_banners
+			unite_the_isle
 		}
 		trigger = {
-			
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 3
+				has_tax_building_trigger = yes
+			}
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
 		}
 		effect = {
-			
+			add_country_modifier = {
+				name = ire_churches_for_clergy
+				duration = 5475
+			}
 		}
 	}
 
@@ -69,7 +90,7 @@ ire_missions_1 = {
 			capital_scope = {
 				development = 25
 				num_of_times_expanded_infrastructure = 1
-				has_tax_building_trigger = yes
+				has_production_building_trigger = yes
 			}
 		}
 		effect = {
@@ -78,7 +99,7 @@ ire_missions_1 = {
 					name = ireland_develop_capital
 					duration = 7300
 				}
-				add_or_upgrade_tax_building = yes
+				add_or_upgrade_production_building = yes
 			}
 		}
 	}
@@ -134,6 +155,41 @@ ire_missions_2 = {
 	}
 	has_country_shield = yes
 
+	ire_secure_alliances = {
+		icon = mission_alliances
+		position = 1
+		trigger = {
+			num_of_allies = 2
+		}
+		effect = {
+			if = {
+				limit = {
+					any_ally = {
+						is_rival = ENG
+					}
+				}
+				custom_tooltip = ire_got_eng_rival_yes
+
+				custom_tooltip = SEPERATOR_TOOLTIP
+
+				add_country_modifier = {
+					name = ire_securing_help
+					duration = -1
+				}
+			}
+			else = {
+				custom_tooltip = ire_got_eng_rival_no
+
+				custom_tooltip = SEPERATOR_TOOLTIP
+
+				add_country_modifier = {
+					name = ire_securing_help
+					duration = 5475
+				}
+			}
+		}
+	}
+
 	ire_wars_of_unification = {
 		icon = mission_have_two_subjects
 		required_missions = { army_of_ireland }
@@ -177,7 +233,7 @@ ire_missions_2 = {
 		effect = {
 			add_country_modifier = {
 				name = ireland_develop_island
-				duration = 3650
+				duration = 7300
 			}
 		}
 	}
@@ -225,7 +281,7 @@ ire_missions_2 = {
 		position = 6
 		trigger = {
 			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-				value = 40
+				value = 55
 				region = british_isles_region
 				culture_group = gaelic
 			}
@@ -453,12 +509,16 @@ ire_missions_3 = {
 				duration = 7300
 			}
 
-			every_province = {
-				limit = {
-					owned_by = ENG
-					region = british_isles_region
+			custom_tooltip = ire_gain_eng_claims_ct
+
+			hidden_effect = {
+				every_province = {
+					limit = {
+						owned_by = ENG
+						region = british_isles_region
+					}
+					add_permanent_claim = ROOT
 				}
-				add_permanent_claim = ROOT
 			}
 		}
 	}
@@ -481,25 +541,27 @@ ire_missions_3 = {
 		}
 		effect = {
 
-		}
-	}
+			custom_tooltip = form_brythonia_ct
 
-	ire_unify_brythonia = {
-		icon = unify_brythonia
-		position = 7
-		required_missions = { ire_culture_english
-	                          ire_celtic_union }
-		provinces_to_highlight = {
-			
-		}
-		trigger = {
-			british_isles_region = {
-				country_or_non_sovereign_subject_holds = ROOT
-			}
-
-		}
-		effect = {
 			set_country_flag = can_form_brythonia
+
+			custom_tooltip = SEPERATOR_TOOLTIP
+
+			country_event_with_effect_insight = {
+				id = flavor_ire.1
+				effect = "
+					custom_tooltip = IRE_distribute_5_base_tax_ct
+
+					236 = {
+						add_trade_modifier = {
+							who = ROOT
+							duration = -1
+							power = 50
+							key = IRE_ISLES_CONTROL
+						}
+					}
+				"
+			}
 		}
 	}
 }
@@ -566,6 +628,7 @@ ire_missions_4_start = {
 					country_or_non_sovereign_subject_holds = ROOT
 				}
 			}
+			legitimacy = 95
 		}
 		effect = {
 			if = {
@@ -623,10 +686,10 @@ ire_missions_branching = {
 		required_missions = { ire_head_of_chiefs }
 		position = 2
 		trigger = {
-			
+			not_in_mission_preview_mode = { key = IRE }
 		}
 		effect = {
-			
+			custom_tooltip = ire_this_is_branching
 		}
 	}
 
@@ -635,10 +698,10 @@ ire_missions_branching = {
 		required_missions = { ire_branching_1 }
 		position = 3
 		trigger = {
-			
+			not_in_mission_preview_mode = { key = IRE }
 		}
 		effect = {
-			
+			custom_tooltip = ire_this_is_branching
 		}
 	}
 	ire_branching_3 = {
@@ -646,15 +709,282 @@ ire_missions_branching = {
 		required_missions = { ire_branching_2 }
 		position = 4
 		trigger = {
-			
+			not_in_mission_preview_mode = { key = IRE }
 		}
 		effect = {
-			
+			custom_tooltip = ire_this_is_branching
 		}
 	}
 }
 
-ire_missions_4_start = {
+ire_missions_4_celtic = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Rule Britannia"
+	}
+	potential = {
+		has_dlc = "Rule Britannia"
+		OR = {
+			tag = ULS
+			tag = TRY
+			tag = TYR
+			tag = MTH
+			tag = SLN
+			tag = FLY
+			tag = KID
+			tag = CNN
+			tag = MNS
+			tag = ORD
+			tag = LEI
+			tag = DMS
+			tag = MCM
+			tag = IRE
+		}
+		has_country_flag = ire_celtic_path
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ire_celtic_1 = {
+		icon = mission_rb_conquer_brittany
+		position = 2
+		required_missions = {
+			ire_head_of_chiefs
+		}
+		provinces_to_highlight = {
+			area = brittany_area
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = IRE }
+			brittany_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			government_rank = 2
+		}
+		effect = {
+			add_country_modifier = {
+				name = celts_in_mainland
+				duration = 3650
+			}
+
+			give_claims = {
+				region = france_region
+			}
+
+			give_claims = {
+				area = galicia_area
+			}
+
+			brittany_area = {
+				change_culture = brythonic
+			}
+		}
+	}
+
+	ire_celtic_2 = {
+		icon = mission_rb_conquer_the_isles
+		position = 3
+		required_missions = {
+			ire_celtic_1
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = IRE }
+			galicia_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			is_great_power = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = ire_foothold_in_spain
+				duration = 5745
+			}
+
+			give_claims = {
+				region = iberia_region
+			}
+		}
+	}
+	ire_celtic_3 = {
+		icon = mission_rb_mediterranean_authority
+		position = 4
+		required_missions = {
+			ire_celtic_2
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = IRE }
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = france_region
+				value = 30
+			}
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				region = iberia_region
+				value = 30
+			}
+			FRA = {
+				exists = no
+			}
+			OR = {
+				SPA = {
+					exists = no
+				}
+				CAS = {
+					exists = no
+				}
+			}
+		}
+		effect = {
+			country_event_with_option_insight = {
+				id = flavor_ire.2
+				option_1 = "
+					add_country_modifier = {
+						name = ire_direct_control
+						duration = -1
+					}
+				"
+				option_2 = "
+					custom_tooltip = flavor_ire.2.b.tt
+
+					add_country_modifier = {
+						name = ire_celtic_crown_of_spain
+						duration = -1
+					}
+				"
+				option_3 = "
+					custom_tooltip = flavor_ire.2.c.tt
+
+					add_country_modifier = {
+						name = ire_celtic_crown_of_france
+						duration = -1
+					}
+				"
+				option_4 = "
+					custom_tooltip = flavor_ire.2.d.tt
+
+					add_country_modifier = {
+						name = ire_triple_crown
+						duration = -1
+					}
+				"
+			}
+		}
+	}
+}
+
+ire_missions_4_britain = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential_on_load = {
+		has_dlc = "Rule Britannia"
+	}
+	potential = {
+		has_dlc = "Rule Britannia"
+		OR = {
+			tag = ULS
+			tag = TRY
+			tag = TYR
+			tag = MTH
+			tag = SLN
+			tag = FLY
+			tag = KID
+			tag = CNN
+			tag = MNS
+			tag = ORD
+			tag = LEI
+			tag = DMS
+			tag = MCM
+			tag = IRE
+		}
+		has_country_flag = ire_britain_path
+		NOT = { map_setup = map_setup_random }
+	}
+	has_country_shield = yes
+
+	ire_britain_1 = {
+		icon = mission_rb_control_electors
+		position = 2
+		required_missions = {
+			ire_head_of_chiefs
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = IRE }
+			OR = {
+				has_idea_group = exploration_ideas
+				has_idea_group = expansion_ideas
+			}
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 65
+			}
+			estate_loyalty = {
+				estate = estate_burghers
+				loyalty = 65
+			}
+		}
+		effect = {
+			add_country_modifier_for_age = {
+				name = ire_colonize_buff
+				age = age_of_discovery
+			}
+		}
+	}
+
+	ire_britain_2 = {
+		icon = mission_rb_rein_in_the_highland_clans
+		position = 3
+		required_missions = {
+			ire_britain_1
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = IRE }
+			num_of_owned_provinces_with = {
+				value = 3
+				development = 25
+				num_of_times_expanded_infrastructure = 1
+				OR = {
+					has_dock_building_trigger = yes
+					has_shipyard_building_trigger = yes
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = ire_dock_bonus_ct
+
+			add_adm_power = 100
+		}
+	}
+	ire_britain_3 = {
+		icon = mission_rb_empire
+		position = 4
+		required_missions = {
+			ire_britain_2
+		}
+		trigger = {
+			not_in_mission_preview_mode = { key = IRE }
+			any_other_great_power = {
+				NOT = { 
+					navy_size = ROOT 
+				}
+			}
+			is_great_power = yes
+		}
+		effect = {
+			add_country_modifier = {
+				name = ire_naval_hegemon
+				duration = -1
+			}
+			custom_tooltip = NED_HALVE_THE_NAVAL_HEGEMONY_REQUIREMENTS
+			set_country_flag = jap_halve_naval_hegemony_requirements
+		}
+	}
+}
+
+ire_missions_4_end = {
 	slot = 4
 	generic = no
 	ai = yes
@@ -702,7 +1032,10 @@ ire_missions_4_start = {
 			hidden_effect = {
 				every_owned_province = {
 					limit = {
-						culture = english
+						OR = {
+							culture = english
+							culture = cornish
+						}
 					}
 					change_culture = sassanic
 				}

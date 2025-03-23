@@ -30,9 +30,47 @@ ire_incorporate_scots = {
 	discipline = 0.025
 	shock_damage_received = -0.05
 }
-
 celtic_conversion_buff = {
 	culture_conversion_cost = -0.10
+}
+ire_churches_for_clergy = {
+	tolerance_own = 1
+	church_loyalty_modifier = 0.10
+}
+ire_securing_help = {
+	improve_relation_modifier = 0.10
+	diplomatic_reputation = 0.50
+}
+celts_in_mainland = {
+	ae_impact = -0.15
+	leader_land_shock = 1
+}
+ire_foothold_in_spain = {
+	manpower_in_accepted_culture_provinces = 0.10
+	shock_damage_received = -0.10
+}
+ire_direct_control = {
+	governing_capacity_modifier = 0.10
+	country_diplomatic_power = 1
+}
+ire_celtic_crown_of_france = {
+	diplomatic_upkeep = 1
+	global_manpower_modifier = 0.20
+}
+ire_celtic_crown_of_spain = {
+	diplomatic_upkeep = 1
+	land_morale_constant = 0.15
+}
+ire_triple_crown = {
+	diplomatic_upkeep = 2
+	administrative_efficiency = 0.05
+}
+ire_colonize_buff = {
+	colonist_placement_chance = 0.1
+	global_colonial_growth = 25
+}
+ire_naval_hegemon = {
+	own_coast_naval_combat_bonus = 1
 }
 OE_Romania_United = {
 	land_morale = 0.1

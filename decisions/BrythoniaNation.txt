@@ -19,6 +19,7 @@ country_decisions = {
 			NOT = { tag = AVE }
 			NOT = { has_country_flag = ire_britain_path }
 			culture_group = gaelic
+			tag = IRE
 			OR = {
 				ai = no
 				AND = {

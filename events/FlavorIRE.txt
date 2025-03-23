@@ -1,0 +1,221 @@
+# ireland flavor events by chase
+
+namespace = flavor_ire
+normal_or_historical_nations = yes
+
+country_event = {
+	id = flavor_ire.1
+	title = flavor_ire.1.t
+	desc = flavor_ire.1.d
+	picture = EUROPEAN_REFUGEES_eventPicture
+	
+	is_triggered_only = yes 
+	fire_only_once = yes
+
+	option = {
+		name = flavor_ire.1.a
+		custom_tooltip = IRE_distribute_5_base_tax_ct
+
+		236 = {
+			add_trade_modifier = {
+				who = ROOT
+				duration = -1
+				power = 50
+				key = IRE_ISLES_CONTROL
+			}
+		}
+
+		hidden_effect = {
+			for = {
+				amount = 5
+				effect = "
+					random_owned_province = {
+						limit = {
+							culture_group = gaelic
+						}
+						add_base_production = 1
+					}
+				"
+			}
+		}
+	}
+}
+
+country_event = {
+	id = flavor_ire.2
+	title = flavor_ire.2.t
+	desc = flavor_ire.2.d
+	picture = GOOD_WITH_MONARCH_eventPicture
+
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	option = {
+		name = flavor_ire.2.a
+
+		add_country_modifier = {
+			name = ire_direct_control
+			duration = -1
+		}
+	}
+
+	option = {
+		name = flavor_ire.2.b
+
+		custom_tooltip = flavor_ire.2.b.tt
+		hidden_effect = {
+			france_region = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				if = {
+					limit = { NOT = { owned_by = ROOT } }
+					cede_province = ROOT
+				}
+				add_core = FRA
+				if = {
+					limit = { is_core = ROOT }
+					remove_core = ROOT
+				}
+			}
+			release = FRA
+			FRA = {
+				change_religion = ROOT
+				change_government = monarchy
+				add_government_reform = irish_highkingdom_reform
+				add_adm_power = 112
+				add_dip_power = 112
+				add_mil_power = 112
+				add_treasury = 136
+				add_manpower = 8
+				add_sailors = 3000
+				add_army_tradition = 5
+				override_country_name = celtic_france_name
+				change_country_color = { color = { 112 192 147 } }
+			}
+			create_subject = {
+				subject_type = personal_union
+				who = FRA
+			}
+		}
+		add_country_modifier = {
+			name = ire_celtic_crown_of_france
+			duration = -1
+		}
+	}
+
+	option = {
+		name = flavor_ire.2.c
+
+		custom_tooltip = flavor_ire.2.c.tt
+		hidden_effect = {
+			iberia_region = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				if = {
+					limit = { NOT = { owned_by = ROOT } }
+					cede_province = ROOT
+				}
+				add_core = SPA
+				if = {
+					limit = { is_core = ROOT }
+					remove_core = ROOT
+				}
+			}
+			release = SPA
+			SPA = {
+				change_religion = ROOT
+				change_government = monarchy
+				add_government_reform = irish_highkingdom_reform
+				add_adm_power = 112
+				add_dip_power = 112
+				add_mil_power = 112
+				add_treasury = 136
+				add_manpower = 8
+				add_sailors = 3000
+				add_army_tradition = 5
+				override_country_name = celtic_spain_name
+				change_country_color = { color = { 168 192 105 } }
+			}
+			create_subject = {
+				subject_type = personal_union
+				who = SPA
+			}
+		}
+		add_country_modifier = {
+			name = ire_celtic_crown_of_spain
+			duration = -1
+		}
+	}
+	option = {
+		name = flavor_ire.2.d
+
+		custom_tooltip = flavor_ire.2.d.tt
+		hidden_effect = {
+			iberia_region = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				if = {
+					limit = { NOT = { owned_by = ROOT } }
+					cede_province = ROOT
+				}
+				add_core = SPA
+				if = {
+					limit = { is_core = ROOT }
+					remove_core = ROOT
+				}
+			}
+			release = SPA
+			SPA = {
+				change_religion = ROOT
+				change_government = monarchy
+				add_government_reform = irish_highkingdom_reform
+				add_adm_power = 112
+				add_dip_power = 112
+				add_mil_power = 112
+				add_treasury = 136
+				add_manpower = 8
+				add_sailors = 3000
+				add_army_tradition = 5
+				override_country_name = celtic_spain_name
+				change_country_color = { color = { 168 192 105 } }
+				
+			}
+			create_subject = {
+				subject_type = personal_union
+				who = SPA
+			}
+			france_region = {
+				limit = { country_or_non_sovereign_subject_holds = ROOT }
+				if = {
+					limit = { NOT = { owned_by = ROOT } }
+					cede_province = ROOT
+				}
+				add_core = FRA
+				if = {
+					limit = { is_core = ROOT }
+					remove_core = ROOT
+				}
+			}
+			release = FRA
+			FRA = {
+				change_religion = ROOT
+				change_government = monarchy
+				add_government_reform = irish_highkingdom_reform
+				add_adm_power = 112
+				add_dip_power = 112
+				add_mil_power = 112
+				add_treasury = 136
+				add_manpower = 8
+				add_sailors = 3000
+				add_army_tradition = 5
+				override_country_name = celtic_france_name
+				change_country_color = { color = { 112 192 147 } }
+			}
+			create_subject = {
+				subject_type = personal_union
+				who = FRA
+			}
+		}
+		add_country_modifier = {
+			name = ire_triple_crown
+			duration = -1
+		}
+	}
+}
