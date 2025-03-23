@@ -14,7 +14,7 @@ romanian_missions_1 = {
 	has_country_shield = yes
 
 	OE_restore_dynasty = {
-		icon = mission_placeholder
+		icon = mission_empire
 		position = 1
 
 		trigger = {
@@ -38,7 +38,7 @@ romanian_missions_1 = {
 	}
 
 	OE_control_boyar = {
-		icon = mission_placeholder
+		icon = mission_subjugate_the_merchants
 		position = 2
 		required_missions = {OE_restore_dynasty}
 
@@ -67,7 +67,7 @@ romanian_missions_1 = {
 	}
 
 	OE_support_of_estates = {
-		icon = mission_placeholder
+		icon = mission_educated_people
 		position = 3
 		required_missions = {
 			OE_control_boyar
@@ -128,7 +128,7 @@ romanian_missions_2 = {
 	has_country_shield = yes
 
 	OE_romania_build_churches = {
-		icon = mission_placeholder
+		icon = mission_european_church
 		position = 1
 
 		trigger = {
@@ -143,7 +143,7 @@ romanian_missions_2 = {
 		}
 	}
 	OE_Balkan_orthodoxy = {
-		icon = mission_placeholder
+		icon = the_holy_league
 		position = 3
 		required_missions = {OE_romania_build_churches}
 
@@ -152,7 +152,7 @@ romanian_missions_2 = {
 				any_ally = {
 					AND = {
 						culture_group = south_slavic
-						religion = orthodox
+						religion_group = christian
 					}
 				}
 				amount = 2
@@ -233,7 +233,7 @@ romanian_missions_3 = {
 	}
 
 	OE_romania_restarting_crusade = {
-		icon = mission_placeholder
+		icon = mission_crusade_for_varna
 		position = 2
 		required_missions = {OE_Romania_Strong_Ally OE_Romania_Uniting_The_Counties}
 		trigger = {
@@ -306,7 +306,7 @@ romanian_missions_4 = {
 	has_country_shield = yes
 
 	OE_Romania_Uniting_The_Counties = {
-        icon = mission_unite_home_region
+        icon = mission_control_moldavia
         required_missions = {}
         position = 1
         trigger = {
@@ -349,7 +349,7 @@ romanian_missions_4 = {
 		}
 	}
 	OE_transyvania = {
-		icon = mission_placeholder
+		icon = mission_unite_home_region
 		required_missions = {OE_Counties_United}
 		position = 3
 
@@ -401,7 +401,7 @@ romanian_missions_4 = {
 		}
 	}
 	OE_break_ottoman_tribute = {
-		icon = mission_placeholder
+		icon = mission_war_chest
 		position = 3
 		required_missions = {
 			OE_transyvania
@@ -466,7 +466,7 @@ romanian_missions_5 = {
 	has_country_shield = yes
 
 	OE_restore_markets = {
-		icon = mission_placeholder
+		icon = mission_trade_company_region_abroad
 		position = 1
 
 		trigger = {
@@ -488,7 +488,7 @@ romanian_missions_5 = {
 	}
 
 	OE_danube_trade = {
-		icon = mission_placeholder
+		icon = danubian_power
 		position = 2
 		required_missions = {
 			OE_restore_markets
@@ -560,7 +560,7 @@ romanian_missions_5 = {
 		}
 	}
 	OE_romania_restore_bulgaria = {
-		icon = mission_placeholder
+		icon = fight_bosnian_heresies
 		position = 3
 		required_missions = {OE_Counties_United}
 
@@ -631,12 +631,13 @@ wallachia_heir = {
 	has_country_shield = yes
 
 	OE_the_shadow_of_dracul = {
-		icon = mission_placeholder
+		icon = mission_impaled_soldies
 		position = 4
 		required_missions = {
 			OE_Balkan_orthodoxy
 			OE_romania_restarting_crusade
 			OE_support_of_estates
+			OE_transyvania
 		}
 		trigger = {
 			dynasty = Draculesti
@@ -666,12 +667,13 @@ moldova_heir = {
 	has_country_shield = yes
 
 	OE_legacy_of_stephen = {
-		icon = mission_placeholder
+		icon = mission_empire
 		position = 4
 		required_missions = {
 			OE_Balkan_orthodoxy
 			OE_romania_restarting_crusade
 			OE_support_of_estates
+			OE_transyvania
 		}
 		trigger = {
 			dynasty = Musat
